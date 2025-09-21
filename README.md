@@ -1,2 +1,2 @@
 # clos2024.github.io
-portfolio site
+Github Pages Portfolio Website for Carlos Ruiz
