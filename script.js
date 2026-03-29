@@ -1,5 +1,6 @@
 import * as pdfjsLib from './pdfjs/build/pdf.mjs';
 
+// Set worker source before using pdf.js
 pdfjsLib.GlobalWorkerOptions.workerSrc = './pdfjs/build/pdf.worker.mjs';
 
 //PDF Logic ---------------------------------------
@@ -12,36 +13,48 @@ let pdfDoc = null,
 
 const scale = 1.5;
 
-// Get elements safely with null checks
-const canvas = document.querySelector('#pdf-render');
-const ctx = canvas ? canvas.getContext('2d') : null;
-const pageCountEl = document.querySelector('#page-count');
-const pageNumEl = document.querySelector('#page-num');
-const prevBtn = document.querySelector('#pdfPrevious');
-const nextBtn = document.querySelector('#pdfNext');
+// Variables for DOM elements (will be set after DOM is ready)
+let canvas = null;
+let ctx = null;
+let pageCountEl = null;
+let pageNumEl = null;
+let prevBtn = null;
+let nextBtn = null;
 
 // Render the page
 const renderPage = async (num) => {
-    if (!pdfDoc || !canvas || !ctx) return;
+    if (!pdfDoc || !canvas || !ctx) {
+        console.warn('PDF document or canvas not ready');
+        return;
+    }
     
-    if (num <= 0 || num > pdfDoc.numPages) return;
+    if (num <= 0 || num > pdfDoc.numPages) {
+        console.warn(`Invalid page number: ${num}`);
+        return;
+    }
     
     pageIsRendering = true;
     
-    const page = await pdfDoc.getPage(num);
-    const viewport = page.getViewport({ scale });
+    try {
+        const page = await pdfDoc.getPage(num);
+        const viewport = page.getViewport({ scale });
+        
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        const renderContext = {
+            canvasContext: ctx,
+            viewport: viewport
+        };
+        
+        await page.render(renderContext).promise;
+        
+        if (pageNumEl) pageNumEl.textContent = num;
+        console.log(`Rendered page ${num}`);
+    } catch (err) {
+        console.error('Error rendering page:', err);
+    }
     
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-    
-    const renderContext = {
-        canvasContext: ctx,
-        viewport: viewport
-    };
-    
-    await page.render(renderContext).promise;
-    
-    if (pageNumEl) pageNumEl.textContent = num;
     pageIsRendering = false;
     
     if (pageNumIsPending !== null) {
@@ -50,42 +63,67 @@ const renderPage = async (num) => {
     }
 };
 
-// Get Document
-pdfjsLib.getDocument(url).promise
-    .then(pdfDoc_ => {
-        pdfDoc = pdfDoc_;
-        if (pageCountEl) pageCountEl.textContent = pdfDoc.numPages;
-        renderPage(pageNum);
-    })
-    .catch(err => {
-        console.error('Error loading PDF:', err);
-    });
-
-// Event listeners for navigation
-if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-        if (pageNum <= 1) return;
-        pageNum--;
-        pageNumIsPending = null;
-        if (pageIsRendering) {
-            pageNumIsPending = pageNum;
-        } else {
+// Initialize PDF viewer when DOM is ready
+const initPDFViewer = () => {
+    // Get elements from DOM
+    canvas = document.querySelector('#pdf-render');
+    ctx = canvas ? canvas.getContext('2d') : null;
+    pageCountEl = document.querySelector('#page-count');
+    pageNumEl = document.querySelector('#page-num');
+    prevBtn = document.querySelector('#pdfPrevious');
+    nextBtn = document.querySelector('#pdfNext');
+    
+    if (!canvas) {
+        console.warn('PDF canvas element not found');
+        return;
+    }
+    
+    // Load the PDF document
+    pdfjsLib.getDocument(url).promise
+        .then(pdfDoc_ => {
+            pdfDoc = pdfDoc_;
+            console.log(`PDF loaded successfully. Pages: ${pdfDoc.numPages}`);
+            if (pageCountEl) pageCountEl.textContent = pdfDoc.numPages;
             renderPage(pageNum);
-        }
-    });
-}
+        })
+        .catch(err => {
+            console.error('Error loading PDF:', err);
+        });
+    
+    // Event listeners for navigation
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (pageNum <= 1) return;
+            pageNum--;
+            pageNumIsPending = null;
+            if (pageIsRendering) {
+                pageNumIsPending = pageNum;
+            } else {
+                renderPage(pageNum);
+            }
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            pageNumIsPending = null;
+            if (pageIsRendering) {
+                pageNumIsPending = pageNum;
+            } else {
+                renderPage(pageNum);
+            }
+        });
+    }
+};
 
-if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-        if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
-        pageNum++;
-        pageNumIsPending = null;
-        if (pageIsRendering) {
-            pageNumIsPending = pageNum;
-        } else {
-            renderPage(pageNum);
-        }
-    });
+// Wait for DOM to be ready before initializing
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPDFViewer);
+} else {
+    // DOM is already loaded
+    initPDFViewer();
 }
 
 //
