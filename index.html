@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Carlos Ruiz Porfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
+            rel="stylesheet" />
+        <script type="module" src="script.js"></script>
+    </head>
+    <body>
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-name">Carlos Ruiz - Game Designer</span>
+            </div>
+            <div class="sidebar-section" style="flex: 1; overflow-y: auto">
+                <div class="sidebar-label">Main Menu</div>
+                <a href="index.html" class="sidebar-link active"> Home </a>
+                <a href="Professional-Work.html" class="sidebar-link"> Professional Work </a>
+                <a href="Personal-Work.html" class="sidebar-link"> Personal Work </a>
+                <a href="About.html" class="sidebar-link"> About </a>
+            </div>
+        </aside>
+        <!-- ══════════════════════════════
+                DESKTOP: Main content
+           ══════════════════════════════ -->
+        <div class="main-wrap">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <span class="topbar-breadcrumb">
+                        <span>Home</span>
+                        <span style="color: var(--border-strong)">›</span>
+                        <!--<span class="page-title">Systems Designer</span>-->
+                    </span>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <!-- Main Body -->
+                <div class="section-header">
+                    <span class="section-title">Table of Contents</span>
+                </div>
+                <div class="one-col">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Professional Work</span>
+                        </div>
+                        <a class="card-img-crop-container" href="Professional-Work.html">
+                            <!--<img src="ESOBanner.jpg" alt="Professional Work Banner" />-->
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Personal Work</span>
+                        </div>
+                        <a class="card-img-crop-container" href="Personal-Work.html">
+                            <!--<img src="PersonalWorkBanner.jpg" alt="Personal Work Banner" />-->
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">About</span>
+                        </div>
+                        <a class="card-img-crop-container" href="About.html">
+                            <!--<img src="AboutMeBanner.jpg" alt="About Banner" />-->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ══════════════════════════════
+                 MOBILE: Fixed top header
+            ══════════════════════════════ -->
+        <header class="mobile-header">
+            <div class="mobile-brand">
+                <span class="navbar-header-title">Carlos Ruiz - Game Designer</span>
+            </div>
+        </header>
+
+        <!-- ══════════════════════════════
+                 MOBILE: Scrollable body
+            ══════════════════════════════ -->
+        <div class="mobile-body">
+            <!-- Greeting -->
+            <div class="page-greeting">
+                <div class="page-greeting-title">Home</div>
+            </div>
+            <div class="mobile-section">
+                <div class="mobile-section-title">Table of Contents</div>
+            </div>
+
+            <!-- Mobile Cards -->
+            <div class="mobile-section">
+                <div class="one-col">
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">
+                            <span class="mobile-card-title">Professional Work</span>
+                        </div>
+                        <a class="mobile-card-img-crop-container" href="Professional-Work.html"> </a>
+                    </div>
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">
+                            <span class="mobile-card-title">Personal Work</span>
+                        </div>
+                        <a class="mobile-card-img-crop-container" href="Personal-Work.html"> </a>
+                    </div>
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">
+                            <span class="mobile-card-title">About</span>
+                        </div>
+                        <a class="mobile-card-img-crop-container" href="About.html"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /mobile-body -->
+
+        <!-- ══════════════════════════════
+                MOBILE: Bottom tab bar
+           ══════════════════════════════ -->
+        <nav class="bottom-nav">
+            <div class="bottom-nav-item active">
+                <span>Home</span>
+                <button class="bottom-nav-item-action" onclick="location.href='index.html'"></button>
+            </div>
+            <div class="bottom-nav-item">
+                <span>Professional Work</span>
+                <button class="bottom-nav-item-action" onclick="location.href='Professional-Work.html'"></button>
+            </div>
+            <div class="bottom-nav-item">
+                <span>Personal Work</span>
+                <button class="bottom-nav-item-action" onclick="location.href='Personal-Work.html'"></button>
+            </div>
+            <div class="bottom-nav-item">
+                <span>About</span>
+                <button class="bottom-nav-item-action" onclick="location.href='About.html'"></button>
+            </div>
+        </nav>
+    </body>
+</html>
