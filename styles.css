@@ -252,7 +252,15 @@
         height: 100%;
         width: 100%;
     }
-
+    /* PDF setup */
+    #pdf-render {
+        display: block;
+        margin: 20px auto 0;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+    }
     /* ── Slideshow navigation ── */
     .slideshow-container {
         height: 100%;
