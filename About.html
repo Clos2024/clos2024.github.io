@@ -12,9 +12,10 @@
         <script type="module" src="script.js"></script>
     </head>
     <body>
+        <!-- ================ Sidebar ================ -->
         <aside class="sidebar">
             <div class="sidebar-brand">
-                <span class="brand-name">Carlos Ruiz - Gamer Designer</span>
+                <span class="brand-name">Carlos Ruiz - Game Designer</span>
             </div>
             <div class="sidebar-section" style="flex: 1; overflow-y: auto">
                 <div class="sidebar-label">Main Menu</div>
@@ -24,25 +25,27 @@
                 <a href="About.html" class="sidebar-link active"> About </a>
             </div>
         </aside>
-        <!-- ══════════════════════════════
-                DESKTOP: Main content
-           ══════════════════════════════ -->
+        <!-- ================ Desktop: Main Content ================ -->
         <div class="main-wrap">
             <header class="topbar">
                 <div class="topbar-left">
                     <span class="topbar-breadcrumb">
                         <span>About</span>
                         <span style="color: var(--border-strong)">›</span>
-                        <!--<span class="page-title">Systems Designer</span>-->
                     </span>
+                </div>
+                <div class="topbar-right">
+                    <button id="pdfDownload" class="download-btn">Download Resume</button>                                         
                 </div>
             </header>
 
+            <!-- ======== Main Body ======== -->
             <div class="page-content">
-                <!-- Main Body -->
+            <!-- ======== Main Body Header ======== -->
                 <div class="section-header">
                     <span class="section-title">Information</span>
                 </div>
+            <!-- ======== Main Body Content ======== -->
                 <div class="one-col">
                     <div class="card">
                         <div class="card-header">
@@ -92,19 +95,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Resume</span>
+                        </div>
+                        <div class="pdf-controls">
+                            <button id="pdfDownload" class="download-btn">Download Resume</button>
+                        </div>
+                        <canvas id="pdf-render-desktop" class="pdf-render"></canvas>
+                        <div class="card-padding"> </div>
+                    </div>
                 </div>
-                
-                <div class="controls">
-                    <button id="pdfPrevious" class="prev-page">
-                        <i class="fas fa-arrow-circle-left">Previous Page</i>
-                    </button>
-                    <button id="pdfNext" class="next-page">
-                        <i class="fas fa-arrow-circle-left">Next Page</i>
-                    </button>
-                    <span class="page-info"> Page <span id="page-num"></span> of <span id="page-count"></span></span>
-                </div>
-                
-                <canvas id="pdf-render"></canvas>
             </div>
         </div>
         <!-- ══════════════════════════════
@@ -175,6 +176,16 @@
                     </div>
                 </div>
             </div>
+            <div class="mobile-card">
+                <div class="card-header">
+                    <span class="card-title">Resume</span>
+                </div>
+                <div class="pdf-controls">
+                    <button id="pdfDownload" class="download-btn">Download Resume</button>
+                </div>
+                <canvas id="pdf-render-mobile" class="pdf-render"></canvas>
+                <div class="card-padding"> </div>
+            </div>
         </div>
         <!-- /mobile-body -->
 
@@ -199,7 +210,6 @@
                 <button class="bottom-nav-item-action" onclick="location.href='About.html'"></button>
             </div>
         </nav>
-    <script type="module" src="script.js"></script>
     </body>
     
 </html>

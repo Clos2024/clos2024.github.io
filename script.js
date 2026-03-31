@@ -13,8 +13,11 @@ let pdfDoc = null,
 
 const scale = 1.5;
 
+// Slideshow setup
+let slideIndex = 0;
+
 // Variables for DOM elements (will be set after DOM is ready)
-let canvas = null;
+let canvases = [];
 let ctx = null;
 let pageCountEl = null;
 let pageNumEl = null;
@@ -23,7 +26,7 @@ let nextBtn = null;
 
 // Render the page
 const renderPage = async (num) => {
-    if (!pdfDoc || !canvas || !ctx) {
+    if (!pdfDoc || canvases.length === 0) {
         console.warn('PDF document or canvas not ready');
         return;
     }
@@ -39,15 +42,19 @@ const renderPage = async (num) => {
         const page = await pdfDoc.getPage(num);
         const viewport = page.getViewport({ scale });
         
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        
-        const renderContext = {
-            canvasContext: ctx,
-            viewport: viewport
-        };
-        
-        await page.render(renderContext).promise;
+        // Render to all canvases
+        for (let canvas of canvases) {
+            const canvasCtx = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            
+            const renderContext = {
+                canvasContext: canvasCtx,
+                viewport: viewport
+            };
+            
+            await page.render(renderContext).promise;
+        }
         
         if (pageNumEl) pageNumEl.textContent = num;
         console.log(`Rendered page ${num}`);
@@ -65,18 +72,17 @@ const renderPage = async (num) => {
 
 // Initialize PDF viewer when DOM is ready
 const initPDFViewer = () => {
-    // Get elements from DOM
-    canvas = document.querySelector('#pdf-render');
-    ctx = canvas ? canvas.getContext('2d') : null;
+    // Get elements from DOM - use class selector to get all canvas elements
+    canvases = Array.from(document.querySelectorAll('canvas.pdf-render'));
+    if (canvases.length === 0) {
+        console.warn('PDF canvas element not found');
+        return;
+    }
+    
     pageCountEl = document.querySelector('#page-count');
     pageNumEl = document.querySelector('#page-num');
     prevBtn = document.querySelector('#pdfPrevious');
     nextBtn = document.querySelector('#pdfNext');
-    
-    if (!canvas) {
-        console.warn('PDF canvas element not found');
-        return;
-    }
     
     // Load the PDF document
     pdfjsLib.getDocument(url).promise
@@ -116,40 +122,62 @@ const initPDFViewer = () => {
             }
         });
     }
+    
+    // Download button listener
+    const downloadBtn = document.querySelector('#pdfDownload');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Carlos Ruiz_Resume2026_BetterFormat.pdf';
+            document.body.appendChild(link);
+            link.click();
+    
+    // Initialize slideshow
+    showSlides();
+            document.body.removeChild(link);
+        });
+    }
 };
 
 // Wait for DOM to be ready before initializing
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initPDFViewer);
+    document.addEventListener('DOMContentLoaded', showSlides);
 } else {
     // DOM is already loaded
     initPDFViewer();
+    showSlides();
 }
 
-//
-//function showSlides() {
-//    let i;
-//    let desktopSlides = document.getElementsByClassName("slideshow-slide-desktop");
-//    let mobileSlides = document.getElementsByClassName("slideshow-slide-mobile");
-//
-//    for (i = 0; i < desktopSlides.length; i++) {
-//        desktopSlides[i].style.display = "none";
-//    }
-//    for (i = 0; i < mobileSlides.length; i++) {
-//        mobileSlides[i].style.display = "none";
-//    }
-//
-//    if (slideIndex >= desktopSlides.length) {
-//        slideIndex = 0;
-//    } else if (slideIndex < 0) {
-//        slideIndex = desktopSlides.length;
-//    }
-//
-//    desktopSlides[slideIndex].style.display = "block";
-//    mobileSlides[slideIndex].style.display = "block";
-//}
-//
-//function changeSlide(n) {
-//    slideIndex += n;
-//    showSlides();
-//}
+
+function showSlides() {
+   let i;
+   let desktopSlides = document.getElementsByClassName("slideshow-slide-desktop");
+   let mobileSlides = document.getElementsByClassName("slideshow-slide-mobile");
+
+   for (i = 0; i < desktopSlides.length; i++) {
+       desktopSlides[i].style.display = "none";
+   }
+   for (i = 0; i < mobileSlides.length; i++) {
+       mobileSlides[i].style.display = "none";
+   }
+
+   if (slideIndex >= desktopSlides.length) {
+       slideIndex = 0;
+   } else if (slideIndex < 0) {
+       slideIndex = desktopSlides.length;
+   }
+
+   desktopSlides[slideIndex].style.display = "block";
+   mobileSlides[slideIndex].style.display = "block";
+}
+
+function changeSlide(n) {
+   slideIndex += n;
+   showSlides();
+}
+
+// Expose functions to global scope for inline onclick handlers
+window.changeSlide = changeSlide;
+window.showSlides = showSlides;

@@ -13,8 +13,8 @@
     </head>
     <body>
         <aside class="sidebar">
-            <div class="sidebar-brand">
-                <span class="brand-name">Carlos Ruiz - Game Designer</span>
+            <div class="sidebar-title-container">
+                <span class="sidebar-title">Carlos Ruiz - Game Designer</span>
             </div>
             <div class="sidebar-section" style="flex: 1; overflow-y: auto">
                 <div class="sidebar-label">Main Menu</div>
@@ -33,8 +33,10 @@
                     <span class="topbar-breadcrumb">
                         <span>Home</span>
                         <span style="color: var(--border-strong)">›</span>
-                        <!--<span class="page-title">Systems Designer</span>-->
                     </span>
+                </div>
+                <div class="topbar-right">
+                    <button id="pdfDownload" class="download-btn">Download Resume</button>                                         
                 </div>
             </header>
 
@@ -43,13 +45,14 @@
                 <div class="section-header">
                     <span class="section-title">Table of Contents</span>
                 </div>
+
                 <div class="one-col">
                     <div class="card">
                         <div class="card-header">
                             <span class="card-title">Professional Work</span>
                         </div>
                         <a class="card-img-crop-container" href="Professional-Work.html">
-                            <!--<img src="ESOBanner.jpg" alt="Professional Work Banner" />-->
+                            <img src="Media/ESOBanner.jpg" alt="Professional Work Banner" />
                         </a>
                     </div>
                     <div class="card">
@@ -57,7 +60,7 @@
                             <span class="card-title">Personal Work</span>
                         </div>
                         <a class="card-img-crop-container" href="Personal-Work.html">
-                            <!--<img src="PersonalWorkBanner.jpg" alt="Personal Work Banner" />-->
+                            <img src="Media/PersonalWorkBanner.jpg" alt="Personal Work Banner" />
                         </a>
                     </div>
                     <div class="card">
@@ -65,7 +68,7 @@
                             <span class="card-title">About</span>
                         </div>
                         <a class="card-img-crop-container" href="About.html">
-                            <!--<img src="AboutMeBanner.jpg" alt="About Banner" />-->
+                            <img src="Media/AboutMeBanner.jpg" alt="About Banner" />
                         </a>
                     </div>
                 </div>
@@ -77,6 +80,9 @@
         <header class="mobile-header">
             <div class="mobile-brand">
                 <span class="navbar-header-title">Carlos Ruiz - Game Designer</span>
+            </div>
+            <div class="mobile-brand">
+                <button id="pdfDownload" class="download-btn">Download Resume</button> 
             </div>
         </header>
 
@@ -99,19 +105,25 @@
                         <div class="mobile-card-header">
                             <span class="mobile-card-title">Professional Work</span>
                         </div>
-                        <a class="mobile-card-img-crop-container" href="Professional-Work.html"> </a>
+                        <a class="card-img-crop-container" href="Professional-Work.html"> 
+                            <img src="Media/ESOBanner.jpg" alt="Professional Work Banner" />
+                        </a>
                     </div>
                     <div class="mobile-card">
                         <div class="mobile-card-header">
                             <span class="mobile-card-title">Personal Work</span>
                         </div>
-                        <a class="mobile-card-img-crop-container" href="Personal-Work.html"> </a>
+                        <a class="card-img-crop-container" href="Personal-Work.html"> 
+                            <img src="Media/PersonalWorkBanner.jpg" alt="Professional Work Banner" />
+                        </a>
                     </div>
                     <div class="mobile-card">
                         <div class="mobile-card-header">
                             <span class="mobile-card-title">About</span>
                         </div>
-                        <a class="mobile-card-img-crop-container" href="About.html"> </a>
+                        <a class="card-img-crop-container" href="About.html"> 
+                            <img src="Media/AboutMeBanner.jpg" alt="Professional Work Banner" />
+                        </a>
                     </div>
                 </div>
             </div>
