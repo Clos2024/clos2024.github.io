@@ -7,23 +7,23 @@
         padding: 0;
     }
     :root {
-        --bg: #f5f4f0;
-        --surface: #ffffff;
-        --surface-2: #eeede8;
-        --border: rgba(0, 0, 0, 0.08);
-        --border-strong: rgba(0, 0, 0, 0.15);
-        --text-primary: #1a1917;
-        --text-secondary: #6b6963;
-        --text-hint: #a09d97;
-        --accent: #1a1917;
-        --accent-bg: #1a1917;
+        --bg: #0f0f0f;
+        --surface: #1a1a1a;
+        --surface-2: #2a2a2a;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-strong: rgba(255, 255, 255, 0.15);
+        --text-primary: #f5f4f0;
+        --text-secondary: #b0b0b0;
+        --text-hint: #707070;
+        --accent: #f5f4f0;
+        --accent-bg: #404040;
         --accent-text: #f5f4f0;
-        --green: #2d6a4f;
-        --green-bg: #d8f3dc;
-        --blue: #1d4e89;
-        --blue-bg: #dbeafe;
-        --amber: #92400e;
-        --amber-bg: #fef3c7;
+        --green: #4ade80;
+        --green-bg: #1e3a1f;
+        --blue: #60a5fa;
+        --blue-bg: #1e3a5f;
+        --amber: #fbbf24;
+        --amber-bg: #3a2f1f;
         --radius-sm: 6px;
         --radius-md: 10px;
         --radius-lg: 16px;
@@ -123,7 +123,7 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(245, 244, 240, 0.85);
+        background: rgba(15, 15, 15, 0.85);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border-bottom: 1px solid var(--border);
@@ -183,7 +183,7 @@
     /* Two-column layout */
     .two-col {
         display: flex;
-        
+        gap: 16px;
         /*gap: 16px;*/
     }
     /* Table card */
@@ -398,7 +398,7 @@
     /* ═══════════════════════════════
         MOBILE LAYOUT (< 900px)
      ═══════════════════════════════ */
-    @media (max-width: 800px) {
+    @media (max-width: 820px) {
         /* Hide all desktop structures */
         .sidebar,
         .main-wrap {
