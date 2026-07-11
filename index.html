@@ -1,155 +1,84 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Carlos Ruiz Porfolio</title>
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
-            rel="stylesheet" />
-        <script type="module" src="script.js"></script>
-    </head>
-    <body>
-        <aside class="sidebar">
-            <div class="sidebar-title-container">
-                <span class="sidebar-title">Carlos Ruiz - Game Designer</span>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="header-navbar">
+        <div class="navbar-title-container">
+            <img class="navbar-profile-pic" src="Media/profile_pic.jpg">
+            <div class="title-subtitle-container">
+                <h1>Carlos Ruiz</h1>
+                <h2>Game Designer</h2>
             </div>
-            <div class="sidebar-section" style="flex: 1; overflow-y: auto">
-                <div class="sidebar-label">Main Menu</div>
-                <a href="index.html" class="sidebar-link active"> Home </a>
-                <a href="Professional-Work.html" class="sidebar-link"> Professional Work </a>
-                <a href="Personal-Work.html" class="sidebar-link"> Personal Work </a>
-                <a href="About.html" class="sidebar-link"> About </a>
+        </div>
+        <div class="navbar-buttons-container"> 
+            <div class="navbar-item current-page">
+                <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Home</button>
             </div>
-        </aside>
-        <!-- ══════════════════════════════
-                DESKTOP: Main content
-           ══════════════════════════════ -->
-        <div class="main-wrap">
-            <header class="topbar">
-                <div class="topbar-left">
-                    <span class="topbar-breadcrumb">
-                        <span>Home</span>
-                        <span style="color: var(--border-strong)">›</span>
-                    </span>
-                </div>
-                <div class="topbar-right">
-                    <button id="pdfDownload" class="download-btn">Download Resume</button>                                         
-                </div>
-            </header>
-
-            <div class="page-content">
-                <!-- Main Body -->
-                <div class="section-header">
-                    <span class="section-title">Table of Contents</span>
-                </div>
-
-                <div class="one-col">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">Professional Work</span>
-                        </div>
-                        <a class="card-img-crop-container" href="Professional-Work.html">
-                            <img src="Media/ESOBanner.jpg" alt="Professional Work Banner" />
+            <div class="navbar-item">
+                <button onclick="window.location.href='Professional-Work.html'"><i class="fas fa-briefcase"></i> Professional Work</button>
+            </div>
+            <div class="navbar-item">
+                <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal Projects</button>
+            </div>
+            <div class="navbar-item">
+                <div class ="dropdown-top-level">
+                    <button id="resumeBtn"><i class="fas fa-file-alt"></i> Resume</button>
+                    <div id="resumeDropdown" class="resume-dropdown-menu">
+                        <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
+                            <i class="fas fa-download"></i> Download PDF
                         </a>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">Personal Work</span>
-                        </div>
-                        <a class="card-img-crop-container" href="Personal-Work.html">
-                            <img src="Media/PersonalWorkBanner.jpg" alt="Personal Work Banner" />
-                        </a>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">About</span>
-                        </div>
-                        <a class="card-img-crop-container" href="About.html">
-                            <img src="Media/AboutMeBanner.jpg" alt="About Banner" />
+                        <a href="About.html" class="dropdown-item">
+                            <i class="fas fa-eye"></i> View Resume
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- ══════════════════════════════
-                 MOBILE: Fixed top header
-            ══════════════════════════════ -->
-        <header class="mobile-header">
-            <div class="mobile-brand">
-                <span class="navbar-header-title">Carlos Ruiz - Game Designer</span>
-            </div>
-            <div class="mobile-brand">
-                <button id="pdfDownload" class="download-btn">Download Resume</button> 
-            </div>
-        </header>
+    </div>
 
-        <!-- ══════════════════════════════
-                 MOBILE: Scrollable body
-            ══════════════════════════════ -->
-        <div class="mobile-body">
-            <!-- Greeting -->
-            <div class="page-greeting">
-                <div class="page-greeting-title">Home</div>
+    <div class="content-body">
+        <div class="main-menu-selection">
+            <div class="selection">
+                <h1>Professional Work</h1>
+                <a href="Professional-Work.html"><img src="Media\elderscrollsonline.jpg"></a>
             </div>
-            <div class="mobile-section">
-                <div class="mobile-section-title">Table of Contents</div>
-            </div>
-
-            <!-- Mobile Cards -->
-            <div class="mobile-section">
-                <div class="one-col">
-                    <div class="mobile-card">
-                        <div class="mobile-card-header">
-                            <span class="mobile-card-title">Professional Work</span>
-                        </div>
-                        <a class="card-img-crop-container" href="Professional-Work.html"> 
-                            <img src="Media/ESOBanner.jpg" alt="Professional Work Banner" />
-                        </a>
-                    </div>
-                    <div class="mobile-card">
-                        <div class="mobile-card-header">
-                            <span class="mobile-card-title">Personal Work</span>
-                        </div>
-                        <a class="card-img-crop-container" href="Personal-Work.html"> 
-                            <img src="Media/PersonalWorkBanner.jpg" alt="Professional Work Banner" />
-                        </a>
-                    </div>
-                    <div class="mobile-card">
-                        <div class="mobile-card-header">
-                            <span class="mobile-card-title">About</span>
-                        </div>
-                        <a class="card-img-crop-container" href="About.html"> 
-                            <img src="Media/AboutMeBanner.jpg" alt="Professional Work Banner" />
-                        </a>
-                    </div>
-                </div>
+            <div class="selection">
+                <h1>Personal Projects</h1>
+                <a href="Personal-Work.html"><img src="Media\personalworkbannerportrait.jpg"></a>
             </div>
         </div>
-        <!-- /mobile-body -->
 
-        <!-- ══════════════════════════════
-                MOBILE: Bottom tab bar
-           ══════════════════════════════ -->
-        <nav class="bottom-nav">
-            <div class="bottom-nav-item active">
-                <span>Home</span>
-                <button class="bottom-nav-item-action" onclick="location.href='index.html'"></button>
+        <div class="about-me-section">
+            <h1>About Me</h1>
+                <p>Gaming is how I've made lifelong friends, expressed my creativity, challenged my mind, and found a passion for technology. With each project I strive to provide all those wonders for today's players by adhering to my core design pillars: respect the player's time, autonomy in play, and intuitive and evolving gameplay.</p>
+        </div>
+        <div class="about-me-section">
+            <p>I've formed these pillars from my experiences designing and programming games in various genres — ranging from tabletop card games to MMORPGs — as well as from insightful discussions and collaborations with peers across multiple disciplines. This breadth of experience has given me both a player's empathy and a developer's practical mindset.</p>
+        </div>
+        <div class="about-me-section">
+            <p>I would welcome the opportunity to bring my design philosophy and collaborative spirit to your team. Please feel free to review my portfolio and reach out — I'd love to discuss how I can contribute to your next project.</p>
+        </div>
+    </div>
+    
+    <div class="footer-navbar">
+            <div class="navbar-item current-page">
+                <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Home</button>
             </div>
-            <div class="bottom-nav-item">
-                <span>Professional Work</span>
-                <button class="bottom-nav-item-action" onclick="location.href='Professional-Work.html'"></button>
+            <div class="navbar-item">
+                <button onclick="window.location.href='Professional-Work.html'"><i class="fas fa-briefcase"></i> Professional</button>
             </div>
-            <div class="bottom-nav-item">
-                <span>Personal Work</span>
-                <button class="bottom-nav-item-action" onclick="location.href='Personal-Work.html'"></button>
+            <div class="navbar-item">
+                <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal</button>
             </div>
-            <div class="bottom-nav-item">
-                <span>About</span>
-                <button class="bottom-nav-item-action" onclick="location.href='About.html'"></button>
-            </div>
-        </nav>
-    </body>
+    </div>
+</body>
 </html>

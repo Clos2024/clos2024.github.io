@@ -1,9 +1,8 @@
-import * as pdfjsLib from './pdfjs/build/pdf.mjs';
+console.log('Script file is being loaded');
 
-// Set worker source before using pdf.js
-pdfjsLib.GlobalWorkerOptions.workerSrc = './pdfjs/build/pdf.worker.mjs';
+let pdfjsLib;
 
-//PDF Logic ---------------------------------------
+//PDF Logic Variables
 const url = './Media/Carlos Ruiz_Resume2026_BetterFormat.pdf';
 
 let pdfDoc = null,
@@ -12,9 +11,6 @@ let pdfDoc = null,
     pageNumIsPending = null;
 
 const scale = 1.5;
-
-// Slideshow setup
-let slideIndex = 0;
 
 // Variables for DOM elements (will be set after DOM is ready)
 let canvases = [];
@@ -132,9 +128,6 @@ const initPDFViewer = () => {
             link.download = 'Carlos Ruiz_Resume2026_BetterFormat.pdf';
             document.body.appendChild(link);
             link.click();
-    
-    // Initialize slideshow
-    showSlides();
             document.body.removeChild(link);
         });
     }
@@ -142,42 +135,133 @@ const initPDFViewer = () => {
 
 // Wait for DOM to be ready before initializing
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPDFViewer);
-    document.addEventListener('DOMContentLoaded', showSlides);
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOMContentLoaded - initializing with PDF.js available');
+        if (pdfjsLib) {
+            initPDFViewer();
+        }
+    });
 } else {
     // DOM is already loaded
-    initPDFViewer();
+    if (pdfjsLib) {
+        initPDFViewer();
+    }
     showSlides();
 }
 
+document.addEventListener('DOMContentLoaded', () => {
 
-function showSlides() {
-   let i;
-   let desktopSlides = document.getElementsByClassName("slideshow-slide-desktop");
-   let mobileSlides = document.getElementsByClassName("slideshow-slide-mobile");
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
 
-   for (i = 0; i < desktopSlides.length; i++) {
-       desktopSlides[i].style.display = "none";
-   }
-   for (i = 0; i < mobileSlides.length; i++) {
-       mobileSlides[i].style.display = "none";
-   }
+    const showSlide = (index) => {
+        slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('active', slideIndex === index);
+        });
+    };
 
-   if (slideIndex >= desktopSlides.length) {
-       slideIndex = 0;
-   } else if (slideIndex < 0) {
-       slideIndex = desktopSlides.length;
-   }
+    if(prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        });
 
-   desktopSlides[slideIndex].style.display = "block";
-   mobileSlides[slideIndex].style.display = "block";
-}
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        });
 
-function changeSlide(n) {
-   slideIndex += n;
-   showSlides();
-}
+        showSlide(currentIndex);
+    }
 
-// Expose functions to global scope for inline onclick handlers
-window.changeSlide = changeSlide;
-window.showSlides = showSlides;
+    const resumeBtn = document.getElementById('resumeBtn');
+    const resumeDropdown = document.getElementById('resumeDropdown');
+
+    resumeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        resumeDropdown.classList.toggle('active');
+        console.log('Classes after toggle:', resumeDropdown.className);
+    });
+
+    const dropdownItems = resumeDropdown.querySelectorAll('.dropdown-item');
+    
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function () {
+            console.log('Dropdown item clicked');
+            resumeDropdown.classList.remove('active');
+        })
+    });
+    document.addEventListener('click', function(e) {
+        if(!e.target.closest('.resume-dropdown')) {
+            resumeDropdown.classList.remove('active');
+        }
+    });
+});
+
+// // Resume dropdown functionality
+// const initResumeDropdown = () => {
+//     console.log('initResumeDropdown called');
+//     const resumeBtn = document.getElementById('resumeBtn');
+//     const resumeDropdown = document.getElementById('resumeDropdown');
+    
+//     console.log('resumeBtn:', resumeBtn);
+//     console.log('resumeDropdown:', resumeDropdown);
+    
+//     if (!resumeBtn || !resumeDropdown) {
+//         console.warn('Resume button or dropdown not found');
+//         return;
+//     }
+    
+//     // Toggle dropdown on button click
+//     resumeBtn.addEventListener('click', function(e) {
+//         console.log('Resume button clicked');
+//         e.preventDefault();
+//         e.stopPropagation();
+//         resumeDropdown.classList.toggle('active');
+//         console.log('Classes after toggle:', resumeDropdown.className);
+//     });
+    
+//     // Close dropdown when clicking on a dropdown item
+//     const dropdownItems = resumeDropdown.querySelectorAll('.dropdown-item');
+//     dropdownItems.forEach(item => {
+//         item.addEventListener('click', function() {
+//             console.log('Dropdown item clicked');
+//             resumeDropdown.classList.remove('active');
+//         });
+//     });
+    
+//     // Close dropdown when clicking outside
+//     document.addEventListener('click', function(e) {
+//         if (!e.target.closest('.resume-dropdown')) {
+//             resumeDropdown.classList.remove('active');
+//         }
+//     });
+    
+//     console.log('Resume dropdown initialized');
+// };
+
+// // Try to initialize immediately
+// console.log('Script loaded, DOM ready state:', document.readyState);
+// if (document.readyState === 'loading') {
+//     console.log('DOM still loading, waiting for DOMContentLoaded');
+//     document.addEventListener('DOMContentLoaded', () => {
+//         console.log('DOMContentLoaded fired');
+//         initResumeDropdown();
+//     });
+// } else {
+//     console.log('DOM already loaded, initializing immediately');
+//     initResumeDropdown();
+// }
+
+// // Also try a setTimeout fallback
+// setTimeout(() => {
+//     console.log('Timeout check - looking for resume button');
+//     if (document.getElementById('resumeBtn') && !document.getElementById('resumeBtn').hasListener) {
+//         console.log('Re-initializing dropdown via timeout');
+//         initResumeDropdown();
+//         document.getElementById('resumeBtn').hasListener = true;
+//     }
+// }, 500);

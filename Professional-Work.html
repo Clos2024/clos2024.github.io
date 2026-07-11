@@ -1,267 +1,151 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Carlos Ruiz Porfolio</title>
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
-            rel="stylesheet" />
-        <script type="module" src="script.js"></script>
-    </head>
-    <body>
-        <aside class="sidebar">
-            <div class="sidebar-title-container">
-                <span class="sidebar-title">Carlos Ruiz - Game Designer</span>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elder Scrolls Online Work Samples</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="header-navbar">
+        <div class="navbar-title-container">
+            <img class="navbar-profile-pic" src="Media/profile_pic.jpg">
+            <div class="title-subtitle-container">
+                <h1>Carlos Ruiz</h1>
+                <h2>Game Designer</h2>
             </div>
-            <div class="sidebar-section" style="flex: 1; overflow-y: auto">
-                <div class="sidebar-label">Main Menu</div>
-                <a href="index.html" class="sidebar-link"> Home </a>
-                <a href="Professional-Work.html" class="sidebar-link active"> Professional Work </a>
-                <a href="Personal-Work.html" class="sidebar-link"> Personal Work </a>
-                <a href="About.html" class="sidebar-link"> About </a>
+        </div>
+        <div class="navbar-buttons-container"> 
+            <div class="navbar-item">
+                <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Home</button>
             </div>
-        </aside>
-        <!-- ══════════════════════════════
-                DESKTOP: Main content
-           ══════════════════════════════ -->
-        <div class="main-wrap">
-            <header class="topbar">
-                <div class="topbar-left">
-                    <span class="topbar-breadcrumb">
-                        <span>Professional Work</span>
-                        <span style="color: var(--border-strong)">›</span>
-                        <!--<span class="page-title">Systems Designer</span>-->
-                    </span>
-                </div>
-                <div class="topbar-right">
-                    <button id="pdfDownload" class="download-btn">Download Resume</button>                                         
-                </div>
-            </header>
+            <div class="navbar-item current-page">
+                <button onclick="window.location.href='Professional-Work.html'"><i class="fas fa-briefcase"></i> Professional Work</button>
+            </div>
+            <div class="navbar-item">
+                <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal Projects</button>
+            </div>
 
-            <div class="page-content">
-                <!-- Main Body -->
-                <div class="section-header">
-                    <span class="section-title">Projects</span>
-                </div>
-                <div class="one-col">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">The Elder Scrolls Online</span>
-                        </div>
-                        <div class="two-col">
-                            <div class="card-media-container">
-                                <iframe
-                                    src="https://www.youtube.com/embed/DvdEWHAIxpE?si=J13u6NjmzljAMchf"
-                                    title="Elder Scrolls Online Seasons of the Worm Cult"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen>
-                                </iframe>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-body-text">Studio: Zenimax Online Studios</div>
-                                <div class="card-body-text">Role: Systems Designer</div>
-                                <div class="card-body-text">Platforms: PC/Xbox/Playstation</div>
-                                <div class="card-body-text">Genre: MMORPG</div>
-                                <div class="card-body-text">
-                                    Description: Every legend starts somewhere and in The Elder Scrolls Online, it
-                                    starts with you. Write your story into a vibrant chapter of Tamriel’s distant past
-                                    that takes place nearly 1,000 years before the iconic TES V: Skyrim, and discover a
-                                    world steeped in adventure and possibility.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">Killectibles</span>
-                        </div>
-                        <div class="two-col">
-                            <div class="card-media-container">
-                                <div class="slideshow-container">
-                                    <div class="slideshow-slide-desktop fade">
-                                        <div class="slideshow_numbertext">1 / 6</div>
-                                        <img src="media/killectibles_img1.jpg" />
-                                        <div class="slideshow-text">Attack Ability Aiming Mockup</div>
-                                    </div>
-                                    <div class="slideshow-slide-desktop fade">
-                                        <div class="slideshow_numbertext">2 / 6</div>
-                                        <img src="media/killectibles_img2.jpg" />
-                                        <div class="slideshow-text">Zone Conquest UI Mockup</div>
-                                    </div>
-                                    <div class="slideshow-slide-desktop fade">
-                                        <div class="slideshow_numbertext">3 / 6</div>
-                                        <img src="media/killectibles_img4.jpg" />
-                                        <div class="slideshow-text">Attack Ability Aiming Mockup</div>
-                                    </div>
-                                    <div class="slideshow-slide-desktop fade">
-                                        <div class="slideshow_numbertext">4 / 6</div>
-                                        <img src="media/killectibles_img5.jpg" />
-                                        <div class="slideshow-text">Player Attack Movement Mockup</div>
-                                    </div>
-                                    <div class="slideshow-slide-desktop fade">
-                                        <div class="slideshow_numbertext">5 / 6</div>
-                                        <img src="media/killectibles_img6.jpg" />
-                                        <div class="slideshow-text">Attack Ability Aiming Mockup</div>
-                                    </div>
-                                    <div class="slideshow-slide-desktop fade">
-                                        <div class="slideshow_numbertext">6 / 6</div>
-                                        <img src="media/killectibles_img7.jpg" />
-                                        <div class="slideshow-text">Attack Ability Aiming Mockup</div>
-                                    </div>
-
-                                    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                                    <a class="next" onclick="changeSlide(1)">&#10095;</a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-body-text">Studio: Depaul Games Studio</div>
-                                <div class="card-body-text">Role: Gameplay Designer</div>
-                                <div class="card-body-text">Platforms: PC/Mobile</div>
-                                <div class="card-body-text">Genre: Turn Based Strategy</div>
-                                <div class="card-body-text">
-                                    Description: The peaceful existence of the Nostalgians in the land of Yesterlandia
-                                    is under attack by the Ennui. Command your Nostalgians to keep the Ennui at bay.
-                                    Failure to do so will result in the loss of childhood wonder and joy. Killectibles
-                                    is a turn-based strategy game with a collectible card game twist. Scan your
-                                    Killectible character's QR code to add it to your army.
-                                </div>
-                            </div>
-                        </div>
+            <div class="navbar-item">
+                <div class ="dropdown-top-level">
+                    <button id="resumeBtn"><i class="fas fa-file-alt"></i> Resume</button>
+                    <div id="resumeDropdown" class="resume-dropdown-menu">
+                        <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                        <a href="About.html" class="dropdown-item">
+                            <i class="fas fa-eye"></i> View Resume
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- ══════════════════════════════
-                 MOBILE: Fixed top header
-            ══════════════════════════════ -->
-        <header class="mobile-header">
-            <div class="mobile-brand">
-                <span class="navbar-header-title">Carlos Ruiz - Game Designer</span>
-            </div>
-        </header>
-        <!-- ══════════════════════════════
-                 MOBILE: Scrollable body
-            ══════════════════════════════ -->
-        <div class="mobile-body">
-            <!-- Greeting -->
-            <div class="page-greeting">
-                <div class="page-greeting-title">Professional Work</div>
-            </div>
+    </div>
 
-            <!-- Portfolio Items -->
-            <div class="mobile-section">
-                <div class="mobile-section-title">Projects</div>
-                <div class="mobile-card">
-                    <div class="mobile-card-header">
-                        <div class="mobile-card-header-item">The Elder Scrolls Online</div>
-                        <div class="mobile-card-header-sub-item">Zenimax Online Studios</div>
-                        <div class="mobile-card-header-sub-item">Role - Systems Designer</div>
+    <div class="content-body">
+        <div class="page-title">
+            <h1>Projects</h1>
+        </div>
+
+        <div class="project-card">
+            <div class="project-card-title">
+                <h1>The Elder Scrolls Online</h1>
+            </div>
+            <div class="project-card-split-container">
+                <div class="project-card-inner-content-text">
+                    <div class="card-body-text">Studio: Zenimax Online Studios</div>
+                        <div class="card-body-text">Role: Systems Designer</div>
+                        <div class="card-body-text">Platforms: PC/Xbox/Playstation</div>
+                        <div class="card-body-text">Genre: MMORPG</div>
+                        <div class="card-body-text">
+                            Description: Every legend starts somewhere and in The Elder Scrolls Online, it
+                            starts with you. Write your story into a vibrant chapter of Tamriel’s distant past
+                            that takes place nearly 1,000 years before the iconic TES V: Skyrim, and discover a
+                            world steeped in adventure and possibility.
                     </div>
-                    <div class="mobile-card-media-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/DvdEWHAIxpE?si=J13u6NjmzljAMchf"
-                            title="Elder Scrolls Online Seasons of the Worm Cult"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="mobile-card-subheader">
-                        <div class="mobile-card-subheader-item-left">Platforms: PC/Xbox/Playstation</div>
-                        <div class="mobile-card-subheader-item-right">Genre: MMORPG</div>
-                    </div>
-                    <div class="mobile-card-body">
-                        <div class="mobile-card-body-text">
-                            Description: Every legend starts somewhere and in The Elder Scrolls Online, it starts with
-                            you. Write your story into a vibrant chapter of Tamriel’s distant past that takes place
-                            nearly 1,000 years before the iconic TES V: Skyrim, and discover a world steeped in
-                            adventure and possibility.
-                        </div>
-                    </div>
+                    <div class="card-body-text"> <a href="ElderScrollsOnlineWorkExample.html"> More Info + Work Samples </a> </div>
                 </div>
-                <!-- <div class="mobile-card"> -->
-                    <div class="mobile-card-header">
-                        <div class="mobile-card-header-item">Killectibles</div>
-                        <div class="mobile-card-header-sub-item">Depaul Games Studio</div>
-                        <div class="mobile-card-header-sub-item">Role - Gameplay Designer</div>
-                    </div>
-                    <div class="mobile-card-media-container">
-                        <div class="slideshow-container">
-                            <div class="slideshow-slide-mobile fade">
-                                <div class="slideshow_numbertext">1 / 6</div>
-                                <img src="media/killectibles_img1.jpg" />
-                                <div class="slideshow-text">Attack Ability Aiming Mockup</div>
-                            </div>
-                            <div class="slideshow-slide-mobile fade">
-                                <div class="slideshow_numbertext">2 / 6</div>
-                                <img src="media/killectibles_img2.jpg" />
-                                <div class="slideshow-text">Zone Conquest UI Mockup</div>
-                            </div>
-                            <div class="slideshow-slide-mobile fade">
-                                <div class="slideshow_numbertext">3 / 6</div>
-                                <img src="media/killectibles_img4.jpg" />
-                                <div class="slideshow-text">Attack Ability Aiming Mockup</div>
-                            </div>
-                            <div class="slideshow-slide-mobile fade">
-                                <div class="slideshow_numbertext">4 / 6</div>
-                                <img src="media/killectibles_img5.jpg" />
-                                <div class="slideshow-text">Player Attack Movement Mockup</div>
-                            </div>
-                            <div class="slideshow-slide-mobile fade">
-                                <div class="slideshow_numbertext">5 / 6</div>
-                                <img src="media/killectibles_img6.jpg" />
-                                <div class="slideshow-text">Attack Ability Aiming Mockup</div>
-                            </div>
-                            <div class="slideshow-slide-mobile fade">
-                                <div class="slideshow_numbertext">6 / 6</div>
-                                <img src="media/killectibles_img7.jpg" />
-                                <div class="slideshow-text">Attack Ability Aiming Mockup</div>
-                            </div>
+                <div class="project-card-inner-content-visual">
+                    <iframe
+                        src="https://www.youtube.com/embed/DvdEWHAIxpE?si=J13u6NjmzljAMchf"
+                        title="Elder Scrolls Online Seasons of the Worm Cult"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
 
-                            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        <div class="project-card">
+            <div class="project-card-title">
+                <h1>Killectibles</h1>
+            </div>
+            <div class="project-card-split-container">
+                <div class="project-card-inner-content-text">
+                    <div class="card-body-text">Studio: Depaul Games Studio</div>
+                    <div class="card-body-text">Role: Gameplay Designer</div>
+                    <div class="card-body-text">Platforms: PC/Mobile</div>
+                    <div class="card-body-text">Genre: Turn Based Strategy</div>
+                    <div class="card-body-text">
+                        Description: The peaceful existence of the Nostalgians in the land of Yesterlandia
+                        is under attack by the Ennui. Command your Nostalgians to keep the Ennui at bay.
+                        Failure to do so will result in the loss of childhood wonder and joy. Killectibles
+                        is a turn-based strategy game with a collectible card game twist. Scan your
+                        Killectible character's QR code to add it to your army.
+                    </div>                    
+                </div>
+                <div class="project-card-inner-content-visual">
+                    <div class="image-slideshow">
+                        <div class="slide active">
+                            <img src="Media\killectibles_img1.jpg" alt="Killectibles scene 1" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
                         </div>
-                    </div>
-                    <div class="mobile-card-subheader">
-                        <div class="mobile-card-subheader-item-left">Platforms: PC/Mobile</div>
-                        <div class="mobile-card-subheader-item-right">Genre: Turn Based Strategy</div>
-                    </div>
-                    <div class="mobile-card-body">
-                        <div class="mobile-card-body-text">
-                            Description: The peaceful existence of the Nostalgians in the land of Yesterlandia is under
-                            attack by the Ennui. Command your Nostalgians to keep the Ennui at bay. Failure to do so
-                            will result in the loss of childhood wonder and joy. Killectibles is a turn-based strategy
-                            game with a collectible card game twist. Scan your Killectible character's QR code to add it
-                            to your army.
+                        <div class="slide">
+                            <img src="Media\killectibles_img2.jpg" alt="Killectibles scene 2" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Territory Conquest Gamemode Mock Up</p></div>
                         </div>
+                        <div class="slide">
+                            <img src="Media\killectibles_img3.jpg" alt="Killectibles scene 3" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Gamemode Map Block Out</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\killectibles_img4.jpg" alt="Killectibles scene 4" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\killectibles_img5.jpg" alt="Killectibles scene 5" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Territory Conquest Gamemode Mock Up</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\killectibles_img6.jpg" alt="Killectibles scene 6" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\killectibles_img7.jpg" alt="Killectibles scene 7" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
+                        </div>
+                        <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
+                        <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /mobile-body -->
-
-        <!-- ══════════════════════════════
-                MOBILE: Bottom tab bar
-           ══════════════════════════════ -->
-        <nav class="bottom-nav">
-            <div class="bottom-nav-item">
-                <span>Home</span>
-                <button class="bottom-nav-item-action" onclick="location.href='index.html'"></button>
+    </div>
+    
+    <div class="footer-navbar">
+            <div class="navbar-item">
+                <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Home</button>
             </div>
-            <div class="bottom-nav-item active">
-                <span>Professional Work</span>
-                <button class="bottom-nav-item-action" onclick="location.href='Professional-Work.html'"></button>
+            <div class="navbar-item current-page">
+                <button onclick="window.location.href='Professional-Work.html'"><i class="fas fa-briefcase"></i> Professional</button>
             </div>
-            <div class="bottom-nav-item">
-                <span>Personal Work</span>
-                <button class="bottom-nav-item-action" onclick="location.href='Personal-Work.html'"></button>
+            <div class="navbar-item">
+                <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal</button>
             </div>
-            <div class="bottom-nav-item">
-                <span>About</span>
-                <button class="bottom-nav-item-action" onclick="location.href='About.html'"></button>
-            </div>
-        </nav>
-    </body>
+    </div>
+</body>
 </html>
