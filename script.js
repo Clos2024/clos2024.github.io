@@ -1,5 +1,57 @@
 console.log('Script file is being loaded');
 
+class Slideshow {
+    constructor(container) {
+        this.container = container;
+        this.slides = container.querySelectorAll('.slide');
+        this.currentIndex = 0;
+        this.videoIndex = 0;
+        this.zoomed = false;
+
+        container.querySelector('.prev').addEventListener('click', () => this.showSlide(this.currentIndex-1));
+        container.querySelector('.next').addEventListener('click', () => this.showSlide(this.currentIndex+1));
+        container.querySelector('#toggle-slideshow-zoom').addEventListener('click', () => this.toggleZoomedView());
+        this.showSlide(0);
+    }
+
+    showSlide(index) {
+        if (this.slides.length == 0) return;
+
+        this.currentIndex = (index + this.slides.length) % this.slides.length;
+
+        this.slides.forEach((slide) => {
+            var videoSlide = slide.querySelector('iframe');
+            if(videoSlide instanceof HTMLIFrameElement){
+                    videoSlide.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            }
+            slide.style.display = 'none';
+        });
+
+        this.slides[this.currentIndex].style.display = 'block';
+    }
+
+    toggleZoomedView() {
+        console.log('toggle zoom')
+        this.zoomed = !this.zoomed;
+        
+        if(this.zoomed)
+        {
+            this.container.className = 'lightbox';
+            this.container.querySelector('.toggle-slideshow-zoom').querySelector('i').className = "fas fa-search-minus";
+        }
+        else
+        {
+            this.container.className = 'slideshow';
+            this.container.querySelector('.toggle-slideshow-zoom').querySelector('i').className = "fas fa-search-plus";
+        }
+        console.log(this.container.className);
+    }
+}
+
+document.querySelectorAll('[data-slideshow]').forEach(container => {
+    new Slideshow(container);
+});
+
 let pdfjsLib;
 
 //PDF Logic Variables
@@ -146,36 +198,9 @@ if (document.readyState === 'loading') {
     if (pdfjsLib) {
         initPDFViewer();
     }
-    showSlides();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    const slides = document.querySelectorAll('.slide');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-    let currentIndex = 0;
-
-    const showSlide = (index) => {
-        slides.forEach((slide, slideIndex) => {
-        slide.classList.toggle('active', slideIndex === index);
-        });
-    };
-
-    if(prevButton && nextButton) {
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        });
-
-        showSlide(currentIndex);
-    }
-
     const resumeBtn = document.getElementById('resumeBtn');
     const resumeDropdown = document.getElementById('resumeDropdown');
 
@@ -201,67 +226,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// // Resume dropdown functionality
-// const initResumeDropdown = () => {
-//     console.log('initResumeDropdown called');
-//     const resumeBtn = document.getElementById('resumeBtn');
-//     const resumeDropdown = document.getElementById('resumeDropdown');
-    
-//     console.log('resumeBtn:', resumeBtn);
-//     console.log('resumeDropdown:', resumeDropdown);
-    
-//     if (!resumeBtn || !resumeDropdown) {
-//         console.warn('Resume button or dropdown not found');
-//         return;
-//     }
-    
-//     // Toggle dropdown on button click
-//     resumeBtn.addEventListener('click', function(e) {
-//         console.log('Resume button clicked');
-//         e.preventDefault();
-//         e.stopPropagation();
-//         resumeDropdown.classList.toggle('active');
-//         console.log('Classes after toggle:', resumeDropdown.className);
-//     });
-    
-//     // Close dropdown when clicking on a dropdown item
-//     const dropdownItems = resumeDropdown.querySelectorAll('.dropdown-item');
-//     dropdownItems.forEach(item => {
-//         item.addEventListener('click', function() {
-//             console.log('Dropdown item clicked');
-//             resumeDropdown.classList.remove('active');
-//         });
-//     });
-    
-//     // Close dropdown when clicking outside
-//     document.addEventListener('click', function(e) {
-//         if (!e.target.closest('.resume-dropdown')) {
-//             resumeDropdown.classList.remove('active');
-//         }
-//     });
-    
-//     console.log('Resume dropdown initialized');
-// };
-
-// // Try to initialize immediately
-// console.log('Script loaded, DOM ready state:', document.readyState);
-// if (document.readyState === 'loading') {
-//     console.log('DOM still loading, waiting for DOMContentLoaded');
-//     document.addEventListener('DOMContentLoaded', () => {
-//         console.log('DOMContentLoaded fired');
-//         initResumeDropdown();
-//     });
-// } else {
-//     console.log('DOM already loaded, initializing immediately');
-//     initResumeDropdown();
-// }
-
-// // Also try a setTimeout fallback
-// setTimeout(() => {
-//     console.log('Timeout check - looking for resume button');
-//     if (document.getElementById('resumeBtn') && !document.getElementById('resumeBtn').hasListener) {
-//         console.log('Re-initializing dropdown via timeout');
-//         initResumeDropdown();
-//         document.getElementById('resumeBtn').hasListener = true;
-//     }
-// }, 500);

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </head>
 <body>
     <div class="header-navbar">
@@ -99,7 +99,7 @@
                     </div>                    
                 </div>
                 <div class="project-card-inner-content-visual">
-                    <div class="image-slideshow">
+                    <div class="slideshow" data-slideshow>
                         <div class="slide active">
                             <img src="Media\killectibles_img1.jpg" alt="Killectibles scene 1" class="slide-content cover">
                             <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
@@ -130,6 +130,7 @@
                         </div>
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
                     </div>
                 </div>
             </div>
