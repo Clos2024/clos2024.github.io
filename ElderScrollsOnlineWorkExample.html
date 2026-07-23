@@ -13,8 +13,8 @@
 <body>
     <div class="header-navbar">
         <div class="navbar-title-container">
-            <img class="navbar-profile-pic" src="Media/profile_pic.jpg">
-            <div class="title-subtitle-container">
+            <img class="navbar-profile-pic" src="Media\Main_Menu_Images\Profile_Pic.jpg">
+            <div class="navbar-text-container">
                 <h1>Carlos Ruiz</h1>
                 <h2>Game Designer</h2>
             </div>
@@ -31,8 +31,10 @@
             </div>
             <div class="navbar-item">
                 <div class ="dropdown-top-level">
-                    <button id="resumeBtn"><i class="fas fa-file-alt"></i> Resume</button>
-                    <div id="resumeDropdown" class="resume-dropdown-menu">
+                    <button class="resume-button" id="resumeBtn">
+                        <i class="fas fa-file-alt"></i> Resume
+                    </button>
+                    <div class="resume-dropdown-menu" id="resumeDropdown">
                         <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
                             <i class="fas fa-download"></i> Download PDF
                         </a>
@@ -45,7 +47,7 @@
         </div>
     </div>
 
-    <div class="content-body">
+    <div class="content-body flex-col-override">
         <div class="page-title">
             <h1>Elder Scrolls Online Feature Work Samples</h1>
         </div>
@@ -59,8 +61,9 @@
                     <div class="card-body-text">
                         Returning to Tamriel after a long absence? The Hero's Return system provides a reintroduction to ESO's core gameplay mechanics and features. This curated experience begins with a short unique quest and provides useful catch-up rewards throughout the experience, so be sure to take part when you log back in!
                     </div>
-
-                    <p>Source: <a href="https://www.elderscrollsonline.com/en-us/guides/herosreturn"> https://www.elderscrollsonline.com/en-us/guides/herosreturn </a> </p>
+                    <div class="card-body-text">
+                        <p> Source: <a href="https://www.elderscrollsonline.com/en-us/guides/herosreturn"> https://www.elderscrollsonline.com/en-us/guides/herosreturn </a> </p>
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -108,25 +111,27 @@
                 <div class="project-card-inner-content-text">
                     <div class="card-body-text"> New and early-game players can expect extra support on their first steps into Tamriel with the Path to Adventure Golden Pursuit. Similar to the Hero’s Return campaign, the Path to Adventure uses the Golden Pursuits framework to offer optional guidance and structure when getting started in ESO. 
                         As you get your new character going, you’ll be introduced to the basics of common ESO activities and mechanics and granted rewards to help you on your way. You’ll also learn about everything from Mundus Stones to crafting, get a chance to explore delves and dungeons, and receive consumables, basic gear, and other helpful goods. </div>
-                    <p>Source: <a href="https://www.elderscrollsonline.com/en-us/news/post/69857"> https://www.elderscrollsonline.com/en-us/news/post/69857 </a> </p>
+                    <div class="card-body-text">
+                        <p>Source: <a href="https://www.elderscrollsonline.com/en-us/news/post/69857"> https://www.elderscrollsonline.com/en-us/news/post/69857 </a> </p>
+                    </div>
                 </div>
                 
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
                         <div class="slide active">
-                            <img src="Media\Path_to_Adventure\Campaign_1.png" alt="Heros Return Welcome Screen" class="slide-content">
+                            <img src="Media\Path_to_Adventure\Campaign_1.png" alt="Path to Adventure Campaign 1" class="slide-content">
                             <div class="slide-image-caption"><p>Path to Adventure Campaign 1</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\Path_to_Adventure\Campaign_2.png" alt="Heros Return Daily Log-in Screen" class="slide-content">
+                            <img src="Media\Path_to_Adventure\Campaign_2.png" alt="Path to Adventure Campaign 2" class="slide-content">
                             <div class="slide-image-caption"><p>Path to Adventure Campaign 2</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\Path_to_Adventure\Campaign_3.png" alt="Heros Return Campaign 1" class="slide-content">
+                            <img src="Media\Path_to_Adventure\Campaign_3.png" alt="Path to Adventure Campaign 3" class="slide-content">
                             <div class="slide-image-caption"><p>Path to Adventure Campaign 3</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\Path_to_Adventure\Campaign_4.png" alt="Heros Return Campaign 2" class="slide-content">
+                            <img src="Media\Path_to_Adventure\Campaign_4.png" alt="Path to Adventure Campaign 4" class="slide-content">
                             <div class="slide-image-caption"><p>Path to Adventure Campaign 4</p></div>
                         </div>
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
@@ -152,11 +157,11 @@
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
                         <div class="slide active">
-                            <img src="Media\House_Designs\Loadscreen_Dancing_Waters_Wellspring_01.png" alt="Killectibles scene 5" class="slide-content cover">
+                            <img src="Media\House_Designs\Loadscreen_Dancing_Waters_Wellspring_01.png" alt="Dancing Waters Wellspring Loadscreen" class="slide-content cover">
                             <div class="slide-image-caption"><p>Dancing Waters Wellspring Loadscreen</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\House_Designs\aw_CRWN_HSG_DancingWatersWellspring_1x1.png" alt="Killectibles scene 5" class="slide-content cover">
+                            <img src="Media\House_Designs\HSG_DancingWatersWellspring_1x1.png" alt="Dancing Waters Wellspring Loadscreen" class="slide-content cover">
                             <div class="slide-image-caption"><p>Dancing Waters Wellspring Screenshot</p></div>
                         </div>
                         <div class="slide">
@@ -187,8 +192,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_StarGazersVigil_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_StarGazersVigil_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_StarGazersVigil_01.png" alt="Star-Gazers Vigil Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Star-Gazers Vigil Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_StarGazersVigil_1x1.png" alt="Star-Gazers Vigil Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Star-Gazers Vigil Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/c25CkBwv_8c?enablejsapi=1&si=PUwqCf8FSGg7i6SJ"
+                                title="Futerko Star-Gazers Vigil House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Star-Gazers Vigil Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -207,8 +228,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_Pirate_Haven_01.png" alt="Killectibles scene 2" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_BuccaneerBay1x1.png" alt="Killectibles scene 2" class="slide">
+                        <div class="slide active">
+                            <img src="Media\House_Designs\Loadscreen_Pirate_Haven_01.png" alt="Buccaneer Bay Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Buccaneer Bay Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_BuccaneerBay1x1.png" alt="Buccaneer Bay Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Buccaneer Bay Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/bifED0CvRzo?enablejsapi=1&si=KKd1tMVh9PWX1FRe"
+                                title="Futerko Buccaneer Bay House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Buccaneer Bay Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -227,8 +264,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_House_of_All_Seasons_01.png" alt="Killectibles scene 6" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_DruidspringConservatory_1x1.png" alt="Killectibles scene 6" class="slide">
+                        <div class="slide active">
+                            <img src="Media\House_Designs\Loadscreen_House_of_All_Seasons_01.png" alt="Druidspring Conservatory Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Druidspring Conservatory Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_DruidspringConservatory_1x1.png" alt="Druidspring Conservatory Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Druidspring Conservatory Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/gEQMaV-Z9jk?enablejsapi=1&si=cX0EpSSwzn91S7Y4"
+                                title="Futerko Druidspring Conservatory House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Druidspring Conservatory Futerko Walkthrough</p></div>
+                        </div>                             
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -247,8 +300,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_Nights_Den_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_NightsDen_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_Nights_Den_01.png" alt="Nights Den Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Nights Den Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_NightsDen_1x1.png" alt="Nights Den Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Nights Den Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/c_iGMA-YfBQ?enablejsapi=1&si=ZcOyfIxJ4seX7vlK"
+                                title="Futerko Nights Den House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Nights Den Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -267,8 +336,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_BismuthSteamBaths_01.png" alt="Killectibles scene 1" class="slide active">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_BismuthSteamBaths_1x1.png" alt="Killectibles scene 1" class="slide active">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_BismuthSteamBaths_01.png" alt="Bismuth Steam Baths Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Bismuth Steam Baths Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_BismuthSteamBaths_1x1.png" alt="Bismuth Steam Baths Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Bismuth Steam Baths Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/h4M42K8DDtU?enablejsapi=1&si=26PuRkom9DGMX5Ob"
+                                title="Futerko Bismuth Steam Baths House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Bismuth Steam Baths Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -287,8 +372,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_Castle_Skingrad_01.png" alt="Killectibles scene 3" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_CastleSkingrad_1x1.png" alt="Killectibles scene 3" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_Castle_Skingrad_01.png" alt="Castle Skingrad Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Castle Skingrad Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_CastleSkingrad_1x1.png" alt="Castle Skingrad Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Castle Skingrad Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/fRAIAHWxbJA?enablejsapi=1&si=5M5M6tdB2fIe8Pqf"
+                                title="Futerko Castle Skingrad House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Castle Skingrad Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -307,8 +408,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                    <img src="Media\House_Designs\Loadscreen_CradleOfTheWormColossus_01.png" alt="Killectibles scene 4" class="slide">
-                    <img src="Media\House_Designs\aw_CRWN_HSG_CradleoftheWormColossus_1x1.png" alt="Killectibles scene 4" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_CradleOfTheWormColossus_01.png" alt="Cradle of The Worm Colossus Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Cradle of The Worm Colossus Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_CradleoftheWormColossus_1x1.png" alt="Cradle of The Worm Colossus Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Cradle of The Worm Colossus Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/C7cqLSnkNQo?enablejsapi=1&si=pdKnNoR7mXhGiBmU"
+                                title="Futerko Cradle of The Worm Colossus House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Cradle of The Worm Colossus Futerko Walkthrough</p></div>
+                        </div>                    
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -327,8 +444,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_Tower_of_Unutterable_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_TowerOfUnutterableTruths_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_Tower_of_Unutterable_01.png" alt="Tower of Unutterable Truths Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Tower of Unutterable Truths Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\TowerOfUnutterableTruths_1x1.png" alt="Tower of Unutterable Truths Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Tower of Unutterable Truths Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/7ckWWgg5uYE?enablejsapi=1&si=TH51c31t42lRKNl5"
+                                title="Futerko Tower of Unutterable Truths House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Tower of Unutterable Truths Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -347,8 +480,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_GrandGalleryOfTamriel_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_GrandGalleryofTamriel_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_GrandGalleryOfTamriel_01.png" alt="Killectibles scene 7" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Grand Gallery of Tamriel Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_GrandGalleryofTamriel_1x1.png" alt="Killectibles scene 7" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Grand Gallery of Tamriel Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/LvNfmaYtXlM?enablejsapi=1&si=yNYNb5PGSwRHHTzy"
+                                title="Futerko Grand Gallery of Tamriel House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Grand Gallery of Tamriel Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -367,8 +516,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_HavenOfTheFiveCompanions_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_HavenOfTheFiveCompanions_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_HavenOfTheFiveCompanions_01.png" alt="Haven of the Five Companions Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Haven of the Five Companions Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_HavenOfTheFiveCompanions_1x1.png" alt="Haven of the Five Companions Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Haven of the Five Companions Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/ivL7zw8FeLo?enablejsapi=1&si=ybZJc1guU53lqOpM"
+                                title="Futerko Haven of the Five Companions House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Haven of the Five Companions Futerko Walkthrough</p></div>
+                        </div>
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -387,8 +552,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_KthendralDeepMines_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_KthendralDeepMines_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_KthendralDeepMines_01.png" alt="Kthendral Deep Mines Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Kthendral Deep Mines Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_KthendralDeepMines_1x1.png" alt="Kthendral Deep Mines Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Kthendral Deep Mines Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/AhSFelTyNWo?enablejsapi=1&si=j5W39ZuYugbtI-G8"
+                                title="Futerko Kthendral Deep Mines House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Kthendral Deep Mines Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -407,8 +588,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_Merryvine_Estate_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_MerryvineEstate_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_Merryvine_Estate_01.png" alt="Merryvine Estate Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Merryvine Estate Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_MerryvineEstate_1x1.png" alt="Merryvine Estate Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Merryvine Estate Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/Sr_qn71jBRo?enablejsapi=1&si=6s17CP8lyrcZBy-F"
+                                title="Futerko Merryvine Estate House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Merryvine Estate Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -427,8 +624,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_Rogues_Refuge_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_RoguesRefuge_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_Rogues_Refuge_01.png" alt="Rogues Refuge Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Rogues Refuge Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_RoguesRefuge_1x1.png" alt="Rogues Refuge Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Rogues Refuge Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/VvLoYqEEzw4?enablejsapi=1&si=fDJ8978ejfqKtIHv"
+                                title="Futerko Rogues Refuge House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Rogues Refuge Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -447,8 +660,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                    <img src="Media\House_Designs\Loadscreen_Seabloom_Villa_01.png" alt="Killectibles scene 7" class="slide">
-                    <img src="Media\House_Designs\aw_CRWN_HSG_SeabloomVilla_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_Seabloom_Villa_01.png" alt="Seabloom Villa Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Seabloom Villa Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_SeabloomVilla_1x1.png" alt="Seabloom Villa Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Seabloom Villa Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/JrON4iJCr3o?enablejsapi=1&si=HiiXqJskKDk6Lqi1"
+                                title="Futerko Seabloom Villa House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Seabloom Villa Futerko Walkthrough</p></div>
+                        </div>                    
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -467,8 +696,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_Shattered_Mirror_Isle_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_ShatteredMirrorIsle_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide">
+                            <img src="Media\House_Designs\Loadscreen_Shattered_Mirror_Isle_01.png" alt="Shattered Mirror Isle Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Shattered Mirror Isle Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_ShatteredMirrorIsle_1x1.png" alt="Shattered Mirror Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Shattered Mirror Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/_Eme4jAXRdY?enablejsapi=1&si=-vNGOpuCZByheocp"
+                                title="Futerko Shattered Mirror Isle House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Shattered Mirror Isle Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -487,8 +732,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_SwordSingers_Redoubt_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_SwordSingersRedoubt_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide active">
+                            <img src="Media\House_Designs\Loadscreen_SwordSingers_Redoubt_01.png" alt="Sword-Singers Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Sword-Singers Redoubt Loadscreen</p></div>
+                        </div>
+                        <div class="slide ">
+                            <img src="Media\House_Designs\HSG_SwordSingersRedoubt_1x1.png" alt="Sword-Singers Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Sword-Singers Redoubt Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/uMtHzdcPe-M?enablejsapi=1&si=BtiJ8fvySV-TceH1"
+                                title="Futerko Sword-Singers Redoubt House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Sword-Singers Redoubt Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -507,8 +768,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_Ayleid_Luminous_Auditorium_01.png" alt="Killectibles scene 3" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_TheaterOfTheAncestors_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide active">
+                            <img src="Media\House_Designs\Loadscreen_Ayleid_Luminous_Auditorium_01.png" alt="Theater of The Ancestors Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Theater of The Ancestors Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_TheaterOfTheAncestors_1x1.png" alt="Theater of The Ancestors Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Theater of The Ancestors Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/teeK8RNmmqA?enablejsapi=1&si=X6Pb7wdBTf3eArpR"
+                                title="Futerko Theater of The Ancestors House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Theater of The Ancestors Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
@@ -527,8 +804,24 @@
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
-                        <img src="Media\House_Designs\Loadscreen_ZhanKhajCrest_01.png" alt="Killectibles scene 7" class="slide">
-                        <img src="Media\House_Designs\aw_CRWN_HSG_ZhanKhajCrest_1x1.png" alt="Killectibles scene 7" class="slide">
+                        <div class="slide active">
+                            <img src="Media\House_Designs\Loadscreen_ZhanKhajCrest_01.png" alt="Zhan Khaj Crest Loadscreen" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Zhan Khaj Crest Loadscreen</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="Media\House_Designs\HSG_ZhanKhajCrest_1x1.png" alt="Zhan Khaj Crest Screenshot" class="slide-content cover">
+                            <div class="slide-image-caption"><p>Zhan Khaj Crest Screenshot</p></div>
+                        </div>
+                        <div class="slide">
+                            <iframe class="slide-content" id="youtube-video"
+                                src="https://www.youtube.com/embed/fQZKE99F9NQ?enablejsapi=1&si=KDe8ziPRK5jixi-n"
+                                title="Futerko Zhan Khaj Crest House Walkthrough"
+                                enablejsapi=1;
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <div class="slide-image-caption"><p>Zhan Khaj Crest Futerko Walkthrough</p></div>
+                        </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
                         <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>

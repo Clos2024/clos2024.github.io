@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <script type="module" src="script.js"></script>
 </head>
 <body>
     <div class="header-navbar">
         <div class="navbar-title-container">
-            <img class="navbar-profile-pic" src="Media/profile_pic.jpg">
-            <div class="title-subtitle-container">
+            <img class="navbar-profile-pic" src="Media\Main_Menu_Images\Profile_Pic.jpg">
+            <div class="navbar-text-container">
                 <h1>Carlos Ruiz</h1>
                 <h2>Game Designer</h2>
             </div>
@@ -26,14 +25,15 @@
             <div class="navbar-item current-page">
                 <button onclick="window.location.href='Professional-Work.html'"><i class="fas fa-briefcase"></i> Professional Work</button>
             </div>
-            <div class="navbar-item">
+            <div class="navbar-item ">
                 <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal Projects</button>
             </div>
-
             <div class="navbar-item">
                 <div class ="dropdown-top-level">
-                    <button id="resumeBtn"><i class="fas fa-file-alt"></i> Resume</button>
-                    <div id="resumeDropdown" class="resume-dropdown-menu">
+                    <button class="resume-button" id="resumeBtn">
+                        <i class="fas fa-file-alt"></i> Resume
+                    </button>
+                    <div class="resume-dropdown-menu" id="resumeDropdown">
                         <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
                             <i class="fas fa-download"></i> Download PDF
                         </a>
@@ -46,7 +46,8 @@
         </div>
     </div>
 
-    <div class="content-body">
+    <div class="content-body flex-col-override">
+        
         <div class="page-title">
             <h1>Projects</h1>
         </div>
@@ -57,22 +58,24 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text">Studio: Zenimax Online Studios</div>
+                    <div class="project-card-text-section">
+                        <div class="card-body-text">Studio: Zenimax Online Studios</div>
                         <div class="card-body-text">Role: Systems Designer</div>
                         <div class="card-body-text">Platforms: PC/Xbox/Playstation</div>
                         <div class="card-body-text">Genre: MMORPG</div>
                         <div class="card-body-text">
-                            Description: Every legend starts somewhere and in The Elder Scrolls Online, it
-                            starts with you. Write your story into a vibrant chapter of Tamriel’s distant past
-                            that takes place nearly 1,000 years before the iconic TES V: Skyrim, and discover a
-                            world steeped in adventure and possibility.
+                        Description: Every legend starts somewhere and in The Elder Scrolls Online, it
+                        starts with you. Write your story into a vibrant chapter of Tamriel’s distant past
+                        that takes place nearly 1,000 years before the iconic TES V: Skyrim, and discover a
+                        world steeped in adventure and possibility.
+                        </div>
                     </div>
                     <div class="card-body-text"> <a href="ElderScrollsOnlineWorkExample.html"> More Info + Work Samples </a> </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <iframe
-                        src="https://www.youtube.com/embed/DvdEWHAIxpE?si=J13u6NjmzljAMchf"
-                        title="Elder Scrolls Online Seasons of the Worm Cult"
+                        src="https://www.youtube.com/embed/9jlOPy1PREk?si=cLWcmX3oNujEBtNB"
+                        title="Elder Scrolls Online Welcome To Season One"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
@@ -86,51 +89,53 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text">Studio: Depaul Games Studio</div>
-                    <div class="card-body-text">Role: Gameplay Designer</div>
-                    <div class="card-body-text">Platforms: PC/Mobile</div>
-                    <div class="card-body-text">Genre: Turn Based Strategy</div>
-                    <div class="card-body-text">
-                        Description: The peaceful existence of the Nostalgians in the land of Yesterlandia
-                        is under attack by the Ennui. Command your Nostalgians to keep the Ennui at bay.
-                        Failure to do so will result in the loss of childhood wonder and joy. Killectibles
-                        is a turn-based strategy game with a collectible card game twist. Scan your
-                        Killectible character's QR code to add it to your army.
-                    </div>                    
+                    <div class="project-card-text-section">
+                        <div class="card-body-text">Studio: Depaul Games Studio</div>
+                        <div class="card-body-text">Role: Gameplay Designer</div>
+                        <div class="card-body-text">Platforms: PC/Mobile</div>
+                        <div class="card-body-text">Genre: Turn Based Strategy</div>
+                        <div class="card-body-text">
+                            Description: The peaceful existence of the Nostalgians in the land of Yesterlandia
+                            is under attack by the Ennui. Command your Nostalgians to keep the Ennui at bay.
+                            Failure to do so will result in the loss of childhood wonder and joy. Killectibles
+                            is a turn-based strategy game with a collectible card game twist. Scan your
+                            Killectible character's QR code to add it to your army.
+                        </div>
+                    </div>                 
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
                         <div class="slide active">
-                            <img src="Media\killectibles_img1.jpg" alt="Killectibles scene 1" class="slide-content cover">
+                            <img src="Media\Killectibles_Reference_Images\Killectibles_Example_1.jpg" alt="Killectibles Reference 1" class="slide-content cover">
                             <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\killectibles_img2.jpg" alt="Killectibles scene 2" class="slide-content cover">
+                            <img src="Media\Killectibles_Reference_Images\Killectibles_Example_2.jpg" alt="Killectibles Reference 2" class="slide-content cover">
                             <div class="slide-image-caption"><p>Territory Conquest Gamemode Mock Up</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\killectibles_img3.jpg" alt="Killectibles scene 3" class="slide-content cover">
+                            <img src="Media\Killectibles_Reference_Images\Killectibles_Example_3.jpg" alt="Killectibles Reference 3" class="slide-content cover">
                             <div class="slide-image-caption"><p>Gamemode Map Block Out</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\killectibles_img4.jpg" alt="Killectibles scene 4" class="slide-content cover">
+                            <img src="Media\Killectibles_Reference_Images\Killectibles_Example_4.jpg" alt="Killectibles Reference 4" class="slide-content cover">
                             <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\killectibles_img5.jpg" alt="Killectibles scene 5" class="slide-content cover">
+                            <img src="Media\Killectibles_Reference_Images\Killectibles_Example_5.jpg" alt="Killectibles Reference 5" class="slide-content cover">
                             <div class="slide-image-caption"><p>Territory Conquest Gamemode Mock Up</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\killectibles_img6.jpg" alt="Killectibles scene 6" class="slide-content cover">
+                            <img src="Media\Killectibles_Reference_Images\Killectibles_Example_6.jpg" alt="Killectibles Reference 6" class="slide-content cover">
                             <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
                         </div>
                         <div class="slide">
-                            <img src="Media\killectibles_img7.jpg" alt="Killectibles scene 7" class="slide-content cover">
+                            <img src="Media\Killectibles_Reference_Images\Killectibles_Example_7.jpg" alt="Killectibles Reference 7" class="slide-content cover">
                             <div class="slide-image-caption"><p>Combat Ability Mock Up</p></div>
                         </div>
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>

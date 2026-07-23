@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <script src="script.js"></script>
 </head>
 <body>
     <div class="header-navbar">
         <div class="navbar-title-container">
-            <img class="navbar-profile-pic" src="Media/profile_pic.jpg">
-            <div class="title-subtitle-container">
+            <img class="navbar-profile-pic" src="Media\Main_Menu_Images\Profile_Pic.jpg">
+            <div class="navbar-text-container">
                 <h1>Carlos Ruiz</h1>
                 <h2>Game Designer</h2>
             </div>
@@ -31,8 +30,10 @@
             </div>
             <div class="navbar-item">
                 <div class ="dropdown-top-level">
-                    <button id="resumeBtn"><i class="fas fa-file-alt"></i> Resume</button>
-                    <div id="resumeDropdown" class="resume-dropdown-menu">
+                    <button class="resume-button" id="resumeBtn">
+                        <i class="fas fa-file-alt"></i> Resume
+                    </button>
+                    <div class="resume-dropdown-menu" id="resumeDropdown">
                         <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
                             <i class="fas fa-download"></i> Download PDF
                         </a>
@@ -44,31 +45,32 @@
             </div>
         </div>
     </div>
-
-    <div class="content-body">
-        <div class="main-menu-selection">
-            <div class="selection">
-                <h1>Professional Work</h1>
-                <a href="Professional-Work.html"><img src="Media\elderscrollsonline.jpg"></a>
+    <div class="homepage-content-body">
+            <div class="about-me-section">
+                <h1>About Me</h1>
+                <p>Gaming is how I've made lifelong friends, expressed my creativity, challenged my mind, 
+                and found a passion for technology. With each project I strive to provide all those wonders 
+                for today's players by adhering to my core design pillars: respect the player's time, autonomy 
+                in play, and intuitive and evolving gameplay.</p>
+                <p>I've formed these pillars from my experiences designing and programming games in various genres 
+                — ranging from tabletop card games to MMORPGs — as well as from insightful discussions and collaborations 
+                with peers across multiple disciplines. This breadth of experience has given me both a player's empathy 
+                and a developer's practical mindset.</p>  
+                <p>I would welcome the opportunity to bring my design philosophy and collaborative spirit to your team. 
+                Please feel free to review my portfolio and reach out — I'd love to discuss how I can contribute to your 
+                next project.</p>
             </div>
-            <div class="selection">
-                <h1>Personal Projects</h1>
-                <a href="Personal-Work.html"><img src="Media\PersonalWorkBannerPortrait.jpg"></a>
+            <div class="main-menu">
+                <div class="main-menu-selection">
+                    <h1>Professional Work</h1>
+                    <a href="Professional-Work.html"><img src="Media\Main_Menu_Images\Portrait_Banner_Elder_Scrolls_Online.jpg"></a>
+                </div>
+                <div class="main-menu-selection">
+                    <h1>Personal Projects</h1>
+                    <a href="Personal-Work.html"><img src="Media\Main_Menu_Images\Portrait_Personal_Work.jpg"></a>
+                </div>
             </div>
-        </div>
-
-        <div class="about-me-section">
-            <h1>About Me</h1>
-                <p>Gaming is how I've made lifelong friends, expressed my creativity, challenged my mind, and found a passion for technology. With each project I strive to provide all those wonders for today's players by adhering to my core design pillars: respect the player's time, autonomy in play, and intuitive and evolving gameplay.</p>
-        </div>
-        <div class="about-me-section">
-            <p>I've formed these pillars from my experiences designing and programming games in various genres — ranging from tabletop card games to MMORPGs — as well as from insightful discussions and collaborations with peers across multiple disciplines. This breadth of experience has given me both a player's empathy and a developer's practical mindset.</p>
-        </div>
-        <div class="about-me-section">
-            <p>I would welcome the opportunity to bring my design philosophy and collaborative spirit to your team. Please feel free to review my portfolio and reach out — I'd love to discuss how I can contribute to your next project.</p>
-        </div>
     </div>
-    
     <div class="footer-navbar">
             <div class="navbar-item current-page">
                 <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Home</button>

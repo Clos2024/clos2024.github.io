@@ -10,7 +10,14 @@ class Slideshow {
 
         container.querySelector('.prev').addEventListener('click', () => this.showSlide(this.currentIndex-1));
         container.querySelector('.next').addEventListener('click', () => this.showSlide(this.currentIndex+1));
-        container.querySelector('#toggle-slideshow-zoom').addEventListener('click', () => this.toggleZoomedView());
+        
+        
+        container.querySelector('.toggle-slideshow-zoom').addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents the click from bubbling up to the document
+            e.preventDefault();
+            this.toggleZoomedView();
+        });
+
         this.showSlide(0);
     }
 
@@ -27,7 +34,7 @@ class Slideshow {
             slide.style.display = 'none';
         });
 
-        this.slides[this.currentIndex].style.display = 'block';
+        this.slides[this.currentIndex].style.display = 'flex';
     }
 
     toggleZoomedView() {
@@ -37,12 +44,21 @@ class Slideshow {
         if(this.zoomed)
         {
             this.container.className = 'lightbox';
-            this.container.querySelector('.toggle-slideshow-zoom').querySelector('i').className = "fas fa-search-minus";
+            this.container.querySelector('.toggle-slideshow-zoom').querySelector('i').className = "fa-solid fa-compress";
+            document.body.style.overflow = 'hidden';
+            this.clickOutsideHandler = (e) => {
+                if (!e.target.closest('.slide-content, .slide-nav')) {
+                    this.toggleZoomedView();
+                }
+            };
+            document.addEventListener('click', this.clickOutsideHandler);
         }
         else
         {
             this.container.className = 'slideshow';
-            this.container.querySelector('.toggle-slideshow-zoom').querySelector('i').className = "fas fa-search-plus";
+            this.container.querySelector('.toggle-slideshow-zoom').querySelector('i').className = "fa-solid fa-expand";
+            document.removeEventListener('click', this.clickOutsideHandler);
+            document.body.style.overflow = 'auto';
         }
         console.log(this.container.className);
     }
@@ -62,7 +78,7 @@ let pdfDoc = null,
     pageIsRendering = false,
     pageNumIsPending = null;
 
-const scale = 1.5;
+// const scale = 1.5;
 
 // Variables for DOM elements (will be set after DOM is ready)
 let canvases = [];
@@ -88,13 +104,34 @@ const renderPage = async (num) => {
     
     try {
         const page = await pdfDoc.getPage(num);
-        const viewport = page.getViewport({ scale });
+
+        const unscaledViewport = page.getViewport({scale: 1});
+
+        // const viewport = page.getViewport({ scale });
         
         // Render to all canvases
         for (let canvas of canvases) {
+
+            const containerWidth = canvas.parentElement.clientWidth;
+            
+            const layoutWidth = Math.max(containerWidth, 350); 
+            
+            const dynamicScale = (layoutWidth - 10) / unscaledViewport.width;
+            const viewport = page.getViewport({ scale: dynamicScale });
+
             const canvasCtx = canvas.getContext('2d');
             canvas.height = viewport.height;
             canvas.width = viewport.width;
+
+            if(containerWidth < 300) {
+                const cssScaleFactor = containerWidth / layoutWidth;
+                canvas.style.transform = `scale(${cssScaleFactor})`;
+                canvas.style.transformOrigin = 'top left';
+                canvas.parentElement.style.height = `${viewport.height * cssScaleFactor}px`;         
+            } else {
+                canvas.style.transform = 'none';
+                canvas.parentElement.style.height = 'auto';
+            }
             
             const renderContext = {
                 canvasContext: canvasCtx,

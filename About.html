@@ -13,8 +13,8 @@
 <body>
     <div class="header-navbar">
         <div class="navbar-title-container">
-            <img class="navbar-profile-pic" src="Media/profile_pic.jpg">
-            <div class="title-subtitle-container">
+            <img class="navbar-profile-pic" src="Media\Main_Menu_Images\Profile_Pic.jpg">
+            <div class="navbar-text-container">
                 <h1>Carlos Ruiz</h1>
                 <h2>Game Designer</h2>
             </div>
@@ -31,10 +31,15 @@
             </div>
             <div class="navbar-item current-page">
                 <div class ="dropdown-top-level">
-                    <button id="resumeBtn"><i class="fas fa-file-alt"></i> Resume</button>
-                    <div id="resumeDropdown" class="resume-dropdown-menu">
-                        <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
+                    <button class="resume-button" id="resumeBtn">
+                        <i class="fas fa-file-alt"></i> Resume
+                    </button>
+                    <div class="resume-dropdown-menu" id="resumeDropdown">
+                        <a href="Media\Carlos Ruiz_Resume2026_V1.pdf" download class="dropdown-item">
                             <i class="fas fa-download"></i> Download PDF
+                        </a>
+                        <a href="About.html" class="dropdown-item">
+                            <i class="fas fa-eye"></i> View Resume
                         </a>
                     </div>
                 </div>
@@ -42,12 +47,12 @@
         </div>
     </div>
 
-    <div class="content-body">
+    <div class="content-body flex-col-override">
         <div class="page-title">
             <h1>Resume</h1>
         </div>
         <div class="pdf-viewer-container">
-            <iframe src="Media\Carlos Ruiz_Resume2026_BetterFormat.pdf" class="pdf-viewer"></iframe>
+            <iframe src="Media\Carlos Ruiz_Resume2026_V1.pdf" class="pdf-viewer"></iframe>
         </div>
     </div>
     

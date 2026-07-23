@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <script src="script.js"></script>
 </head>
 <body>
     <div class="header-navbar">
         <div class="navbar-title-container">
-            <img class="navbar-profile-pic" src="Media/profile_pic.jpg">
-            <div class="title-subtitle-container">
+            <img class="navbar-profile-pic" src="Media\Main_Menu_Images\Profile_Pic.jpg">
+            <div class="navbar-text-container">
                 <h1>Carlos Ruiz</h1>
                 <h2>Game Designer</h2>
             </div>
         </div>
         <div class="navbar-buttons-container"> 
-            <div class="navbar-item">
+            <div class="navbar-item ">
                 <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Home</button>
             </div>
             <div class="navbar-item">
@@ -31,8 +30,10 @@
             </div>
             <div class="navbar-item">
                 <div class ="dropdown-top-level">
-                    <button id="resumeBtn"><i class="fas fa-file-alt"></i> Resume</button>
-                    <div id="resumeDropdown" class="resume-dropdown-menu">
+                    <button class="resume-button" id="resumeBtn">
+                        <i class="fas fa-file-alt"></i> Resume
+                    </button>
+                    <div class="resume-dropdown-menu" id="resumeDropdown">
                         <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
                             <i class="fas fa-download"></i> Download PDF
                         </a>
@@ -45,7 +46,7 @@
         </div>
     </div>
 
-    <div class="content-body">
+    <div class="content-body flex-col-override">
         <div class="page-title">
             <h1>Projects</h1>
         </div>
@@ -56,20 +57,22 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text">Role - Lead Gameplay Designer & Programmer</div>
-                    <div class="card-body-text">Platforms: PC</div>
-                    <div class="card-body-text">Genre: Arcade Shooter</div>
-                    <div class="card-body-text">
-                        Description: Skate and shoot your way through waves of enemies increasing your
-                        firepower along the way to become the champion. Run N' Gun is a First-person arcade
-                        shooter with a focus on movement. Become the Protagonist Bot and use your skills to
-                        survive waves of Antagonist Bots to win it all.
+                    <div class="project-card-text-section">
+                        <div class="card-body-text">Role - Lead Gameplay Designer & Programmer</div>
+                        <div class="card-body-text">Platforms: PC</div>
+                        <div class="card-body-text">Genre: Arcade Shooter</div>
+                        <div class="card-body-text">
+                            Description: Skate and shoot your way through waves of enemies increasing your
+                            firepower along the way to become the champion. Run N' Gun is a First-person arcade
+                            shooter with a focus on movement. Become the Protagonist Bot and use your skills to
+                            survive waves of Antagonist Bots to win it all.
+                        </div>
                     </div>
                     <div class="card-body-text"> <a href="https://store.steampowered.com/app/1945060/Run_N_Gun/"> Play Here </a> </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <video controls preload="auto">
-                        <source src="Media/Run%20N%20Gun-1.mp4" type="video/mp4" />
+                        <source src="Media\Video_References\Run_N_Gun_Trailer.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -82,16 +85,18 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text">Role - Solo Development Project</div>
-                    <div class="card-body-text">Platforms: PC</div>
-                    <div class="card-body-text">Genre: RTS Survival</div>
-                    <div class="card-body-text">
-                        Description: Your crew and you are stranded on a mysterious island of legend called
-                        solitude. Command your sailors to escape this mysterious island. Chop trees and mine
-                        stones to gather resources for shelter, armor, and weapons. Research how to
-                        re-construct missing components of your vessel. Cultivate land to feed your sailors.
-                        Solitude is a survival RTS game where you manage resources and battle monsters to
-                        rebuild your escape vessel.
+                    <div class="project-card-text-section">
+                        <div class="card-body-text">Role - Solo Development Project</div>
+                        <div class="card-body-text">Platforms: PC</div>
+                        <div class="card-body-text">Genre: RTS Survival</div>
+                        <div class="card-body-text">
+                            Description: Your crew and you are stranded on a mysterious island of legend called
+                            solitude. Command your sailors to escape this mysterious island. Chop trees and mine
+                            stones to gather resources for shelter, armor, and weapons. Research how to
+                            re-construct missing components of your vessel. Cultivate land to feed your sailors.
+                            Solitude is a survival RTS game where you manage resources and battle monsters to
+                            rebuild your escape vessel.
+                        </div>
                     </div>
                     <div class="card-body-text"> <a href="https://devclos.itch.io/solitude"> Play Here </a> </div>                  
                 </div>
@@ -112,15 +117,17 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text">Role - Lead Gameplay Designer & Programmer</div>
-                    <div class="card-body-text">Platforms: PC</div>
-                    <div class="card-body-text">Genre: Educational Puzzle</div>
-                    <div class="card-body-text">
-                        Description: An educational math game made for the tutoring service Mathnasium.
-                        Solve math questions to escape the Cave of Math. Along the way you will be tested by
-                        various cave dwelling creatures. Test your knowledge of math arithmetic, change
-                        counting, and time telling. Play to your strengths by selecting how difficult you
-                        want your path to be.
+                    <div class="project-card-text-section">
+                        <div class="card-body-text">Role - Lead Gameplay Designer & Programmer</div>
+                        <div class="card-body-text">Platforms: PC</div>
+                        <div class="card-body-text">Genre: Educational Puzzle</div>
+                        <div class="card-body-text">
+                            Description: An educational math game made for the tutoring service Mathnasium.
+                            Solve math questions to escape the Cave of Math. Along the way you will be tested by
+                            various cave dwelling creatures. Test your knowledge of math arithmetic, change
+                            counting, and time telling. Play to your strengths by selecting how difficult you
+                            want your path to be.
+                        </div>
                     </div>
                     <div class="card-body-text"> <a href="https://devclos.itch.io/cave-of-math"> Play Here </a> </div>                
                 </div>
@@ -141,15 +148,17 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text">Role - Lead Gameplay Designer & Programmer</div>
-                    <div class="card-body-text">Platforms: PC</div>
-                    <div class="card-body-text">Genre: Tower Defense</div>
-                    <div class="card-body-text">
-                        Description: A computer error has set all Black Friday deals to 100% off. As head of
-                        mall security, you are tasked you with defending these mismarked items against
-                        hordes and hordes of mindless consumers until Black Friday is over. Lose to many
-                        items and you'll be fired! Re-enforce your aisles with makeshift turrets to secure
-                        your job and survive Black Friday.
+                    <div class="project-card-text-section">
+                        <div class="card-body-text">Role - Lead Gameplay Designer & Programmer</div>
+                        <div class="card-body-text">Platforms: PC</div>
+                        <div class="card-body-text">Genre: Tower Defense</div>
+                        <div class="card-body-text">
+                            Description: A computer error has set all Black Friday deals to 100% off. As head of
+                            mall security, you are tasked you with defending these mismarked items against
+                            hordes and hordes of mindless consumers until Black Friday is over. Lose to many
+                            items and you'll be fired! Re-enforce your aisles with makeshift turrets to secure
+                            your job and survive Black Friday.
+                        </div>
                     </div>
                     <div class="card-body-text"> <a href="https://devclos.itch.io/black-friday-blitz"> Play Here </a> </div>
                 </div>
@@ -170,15 +179,17 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text">Role - Solo Development Project</div>
-                    <div class="card-body-text">Platforms: PC</div>
-                    <div class="card-body-text">Genre: Arcade Shooter</div>
-                    <div class="card-body-text">
-                        Description: Swarm is a 2D arcade shooter. Blast through waves of enemies and
-                        asteroids to defeat an alien force found deep in the echoes of space. Increase
-                        firepower by defeating any enemy that dare cross your path. If you can survive long
-                        enough, you may finally reach the queen and put an end to this invasive species.
-                        Battle your friends to achieve the highest score on the leaderboard.
+                    <div class="project-card-text-section">
+                        <div class="card-body-text">Role - Solo Development Project</div>
+                        <div class="card-body-text">Platforms: PC</div>
+                        <div class="card-body-text">Genre: Arcade Shooter</div>
+                        <div class="card-body-text">
+                            Description: Swarm is a 2D arcade shooter. Blast through waves of enemies and
+                            asteroids to defeat an alien force found deep in the echoes of space. Increase
+                            firepower by defeating any enemy that dare cross your path. If you can survive long
+                            enough, you may finally reach the queen and put an end to this invasive species.
+                            Battle your friends to achieve the highest score on the leaderboard.
+                        </div>
                     </div>
                     <div class="card-body-text"> <a href="https://devclos.itch.io/swarm"> Play Here </a> </div>
                 </div>

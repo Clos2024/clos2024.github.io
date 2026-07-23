@@ -6,38 +6,38 @@
 
     /* For browsers that support clamp  */
     @supports (font-size: clamp(1rem, 1vi, 1rem)) {
-        :root {
-                --fs-sm: clamp(0.6rem, 0.11vi + 0.57rem, 0.75rem);
-                --fs-base: clamp(0.75rem, 0.18vi + 0.71rem, 1rem);
-                --fs-md: clamp(0.94rem, 0.29vi + 0.87rem, 1.33rem);
-                --fs-lg: clamp(1.17rem, 0.44vi + 1.07rem, 1.78rem);
-                --fs-xl: clamp(1.46rem, 0.66vi + 1.31rem, 2.37rem);
-                --fs-xxl: clamp(1.83rem, 0.97vi + 1.6rem, 3.16rem);
-                --fs-xxxl: clamp(2.29rem, 1.41vi + 1.96rem, 4.21rem);
-        }
+    :root {
+            --fs-sm: clamp(0.7rem, 0.11vi + 0.68rem, 0.84rem);
+            --fs-base: clamp(0.88rem, 0.18vi + 0.83rem, 1.13rem);
+            --fs-md: clamp(1.09rem, 0.3vi + 1.02rem, 1.5rem);
+            --fs-lg: clamp(1.37rem, 0.46vi + 1.26rem, 2rem);
+            --fs-xl: clamp(1.71rem, 0.7vi + 1.54rem, 2.66rem);
+            --fs-xxl: clamp(2.14rem, 1.04vi + 1.89rem, 3.55rem);
+            --fs-xxxl: clamp(2.67rem, 1.51vi + 2.32rem, 4.73rem);
+    }
     }
     /* For browsers that don't support clamp */
     @supports not (font-size: clamp(1rem, 1vi, 1rem)) {
-        :root {
-                --fs-sm: 0.6rem;
-                --fs-base: 0.75rem;
-                --fs-md: 0.94rem;
-                --fs-lg: 1.17rem;
-                --fs-xl: 1.46rem;
-                --fs-xxl: 1.83rem;
-                --fs-xxxl: 2.29rem;
+    :root {
+            --fs-sm: 0.7rem;
+            --fs-base: 0.88rem;
+            --fs-md: 1.09rem;
+            --fs-lg: 1.37rem;
+            --fs-xl: 1.71rem;
+            --fs-xxl: 2.14rem;
+            --fs-xxxl: 2.67rem;
     }
     @media screen and (min-width: 2560px) {
         :root {
-                --fs-sm: 0.75rem;
-                --fs-base: 1rem;
-                --fs-md: 1.33rem;
-                --fs-lg: 1.78rem;
-                --fs-xl: 2.37rem;
-                --fs-xxl: 3.16rem;
-                --fs-xxxl: 4.21rem;
-            }
+                --fs-sm: 0.84rem;
+                --fs-base: 1.13rem;
+                --fs-md: 1.5rem;
+                --fs-lg: 2rem;
+                --fs-xl: 2.66rem;
+                --fs-xxl: 3.55rem;
+                --fs-xxxl: 4.73rem;
         }
+    }
     }
 
     :root{
@@ -51,20 +51,21 @@
         --accent-four: #dfafce;
         --accent-five: #8890DA;
         --accent-six: #88ceda;
-        --header-height: 100px;
-
+        --header-height: 8vh;
     }
-
     html,
     body{
-        min-width: 375px;
-        min-height: 667px;
-        overflow-x: auto;
-        overflow-y: auto;
-        font-family: "DM Sans", sans-serif;
+        font-family: 'Roboto Flex', monospace;
         background-color: var(--background);
         color: var(--primary-text);
     }
+    body{
+        height: calc(100vh - var(--header-height));
+        display: flex;
+        flex-direction: column;
+        margin-top: var(--header-height);
+    }
+
     /* #endregion --- Base Styles --- */
     
     .desktop-wrapper{
@@ -88,41 +89,43 @@
         background-color: var(--background-accent);
         justify-content: space-between;
         z-index: 1000;
+        flex: 0;
     }
 
     .navbar-title-container{
         display: flex;
         flex-direction: row;
+        justify-content: center;
         align-items: center;
-        padding: 20px;
         width: 25%;
-        gap: 10px;;
-    }
-
-    .navbar-title-container h1,
-    .navbar-title-container h2{
-        margin: 0;
-        line-height: 1;
-        display: flex;
-        align-items: center;
-    }
-
-    .navbar-title-container h1{
-        font-size: var(--fs-xxl);
-    }
-
-    .navbar-title-container h2{
-        font-size: var(--fs-lg);
-        color: var(--accent-one);
+        height: 75%;
+        margin: auto;
+        padding: auto;
+        gap: 0.5rem;
     }
 
     .navbar-profile-pic{
-        width: min(8vw, var(--fs-xxxl));
-        height: min(8vw, var(--fs-xxxl));
+        height: 100%;
         object-fit: cover;
         border-radius: 50%;
         border: 2px solid var(--primary-text);
-        flex-shrink: 0;
+    }
+
+    .navbar-text-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        line-height: 1;
+    }
+
+    .navbar-text-container h1{
+        font-size: var(--fs-xxl);
+    }
+    
+    .navbar-text-container h2{
+        font-size: var(--fs-lg);
+        color: var(--accent-one);
     }
 
     .navbar-buttons-container{
@@ -136,11 +139,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-shrink: 0;
         width: 20%;
     }
 
-    .navbar-item button{
+    .navbar-item button,
+    .navbar-item .dropdown-top-level button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         height: 100%;
         border: none;
@@ -148,9 +154,6 @@
         background-color: var(--background-accent);
         color: var(--primary-text);
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         gap: 0.5rem;
         font-size: var(--fs-md);
         text-shadow:
@@ -160,35 +163,32 @@
             1px 1px 0 #000000;
     }
 
-    .navbar-item button:hover{
+    .navbar-item button:hover,
+    .navbar-item .dropdown-top-level .resume-button:hover{
         background-color: var(--accent-one);
     }
-
 
     .navbar-item .dropdown-top-level{
         display: flex;
         flex-direction: column;
+        height: 100%;
         width: 100%;
-        margin-top: calc(var(--header-height) * 2);
-        height: calc(var(--header-height) * 3);
     }
 
-    .navbar-item .dropdown-top-level button{
-        display: flex;
-        height: var(--header-height);
-        margin: 0;
-        padding: 0;
+    .navbar-item .dropdown-top-level .resume-button{
         background-color: var(--accent-five);
+        height: var(--header-height);
+        flex-shrink: 0;
     }
 
     .resume-dropdown-menu{
         display: none;
+        z-index: 0;
         width: inherit;
         background-color: var(--background-accent);
         border: 1px solid var(--accent-five);
         border-radius: 0 0 0 5px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        z-index: 0;
     }
 
    .resume-dropdown-menu.active{
@@ -219,32 +219,143 @@
 
     .resume-dropdown-menu .dropdown-item:last-child{
         border-radius: 0 0 5px 5px;
-    } 
+    }
 
-    /* #endregion navbar styles */
+    .current-page button,
+    .current-page .dropdown-top-level button{
+        color: var(--accent-two);
+    }
 
     .footer-navbar{
         display: none;
     }
+    /* #endregion navbar styles */
+
+    .homepage-content-body{
+        display: flex;
+        height: auto;
+        padding: var(--header-height) 5vw;
+        gap: 2vh;
+    }
 
     .content-body{
         display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin: var(--header-height) auto;
-        padding-top: 20px;
-        padding-bottom: var(--header-height);
-        align-items: center;
-        gap: 20px;
+        padding: 2vh 5vw;
+        gap: 2vh;
+        height: auto;
+        padding-bottom: calc(var(--header-height) + 2vh);
     }
 
+    .flex-col-override{
+        flex-direction: column;
+    }
+    /* #region color overrides styles */
+    .text-green-override{
+        color: var(--accent-one);
+    }
+
+    .text-orange-override{
+        color: var(--accent-two);
+    }    
+
+    .text-yellow-override{
+        color: var(--accent-three);
+    }
+
+    .text-pink-override{
+        color: var(--accent-four);
+    }
+
+    .text-purple-override{
+        color: var(--accent-five);
+    }
+
+    .text-blue-override{
+        color: var(--accent-six);
+    }
+    /* #endregion color overrides styles */
+
+    /* #region about-me-section */
+    .about-me-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        width: 40%;
+        height: 60vh;
+        border-right: 5px solid;
+        padding: 0 2vw;
+        gap: 3vh;
+    }
+
+    .about-me-section h1{
+        font-size: var(--fs-xxl);
+        text-align: center;
+    }
+
+    .about-me-section p{
+        font-size: var(--fs-md);
+    }
+    /* #endregion about-me-section */
+
+    /* #region Main Menu */
+    .main-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 60vh;
+    }
+
+    .main-menu-selection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        gap: 1vh;
+    }
+    .main-menu-selection h1{
+        display: flex;
+        justify-content: space-around;
+        width: 75%;
+        font-size: var(--fs-xl);
+    }
+
+    .main-menu-selection a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-menu-selection img{
+        width: 75%;
+        height: auto;
+        object-fit: contain;
+        aspect-ratio: 2/3;
+        border-radius: 20px;
+        border: 3px solid var(--accent-five);
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    /* #endregion Main Menu */
+
+    /* #region Page Title */
     .page-title{
         display: flex;
         flex-direction: column;
         width: 100%;
-        border-bottom: 1px solid;
+        border-bottom: 3px solid;
+        padding-bottom: 2vh;
+    }
+    
+    .page-title h1{
+        font-size: var(--fs-xl);
     }
 
+     /* #endregion Page Title */
+
+    /* #region Card Styles */
     .project-card{
         display: flex;
         flex-direction: column;
@@ -256,7 +367,7 @@
     
     .project-card-title{
         padding: 10px;
-        border-bottom: 2px solid var(--background);
+        border-bottom: 2px solid #464646;
     }
 
     .project-card-title h1{
@@ -272,9 +383,16 @@
     .project-card-inner-content-text{
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         width: 50%;
         padding: 10px;
-        gap: 20px;
+        gap: 3vh;
+    }
+
+    .project-card-text-section{
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
     }
 
     .project-card-inner-content-visual{
@@ -296,32 +414,56 @@
         font-size: var(--fs-md);
     }
 
-    .card-body-text a{
-        font-size: var(--fs-xl);
+    .card-body-text a, .card-body-text p {
+        font-size: var(--fs-lg);
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+    }
+
+    .card-body-text a:link{
+        color: #0000EE;
+    }
+
+    .card-body-text a:visited{
         color: var(--accent-four);
     }
 
+    .card-body-text a:hover{
+        color: var(--accent-one)
+    }
+
+    .card-body-text a:active{
+        color: var(--accent-six);
+    }
+    /* #endregion Card Styles */
+    
+    /* #region pdf Styles */
     .pdf-viewer-container{
         display: flex;
         width: 100%;
-        height: 75vh;
+        height: calc(80vh - var(--header-height));
+        position: relative;
         border: 1px solid var(--background-accent);
         border-radius: 10px;
-        overflow: hidden;
     }
 
     .pdf-viewer{
-        width: 100%;
+        display: block;
         height: 100%;
+        width: 100%;
+        /* width: 210mm;
+        height: 297mm; */
+        margin: auto;
         border: none;
     }
+    /* #endregion pdf Styles */
 
     /* #region slideshow */
 
     .slideshow{
         position: relative;
         width: 100%;
-        aspect-ratio: 16 / 9;
+        height: 100%;
         overflow: hidden;
         border-radius: 0 0 10px 0;
         background-color: var(--background);
@@ -329,6 +471,7 @@
 
     .slideshow .slide{
         display: none;
+        flex-direction: column;
         position: relative;
         height: 100%;
         width: 100%;
@@ -337,6 +480,7 @@
     .slideshow .slide-content{
         height: 100%;
         width: 100%;
+        aspect-ratio: 16 / 9;
         object-fit: contain;
     }
 
@@ -347,17 +491,24 @@
     }
     
     .slide-image-caption{
-        display: block;
-        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        bottom:0px;
-        left: 0px;
-        background-color: #222222e5;
+        height: 8vh;
+        background-color: #161616;
     }
 
     .slide-image-caption p{
-        padding: 10px;
-        font-size: var(--fs-md);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: var(--fs-lg);
+        text-align: center;
+        
     }
 
     .slideshow .slide.active{
@@ -372,10 +523,10 @@
         color: white;
         border: none;
         border-radius: 50%;
-        width: 36px;
-        height: 36px;
+        width: 3vw;
+        height: 3vw;
         cursor: pointer;
-        font-size: 18px;
+        font-size: var(--fs-lg);
     }
 
     .slideshow .slide-nav.prev{
@@ -387,61 +538,30 @@
     }
     .slideshow .toggle-slideshow-zoom
     {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 5px;
+        margin-right: 5px;
         background: rgba(0, 0, 0, 0.55);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 3vw;
+        height: 3vw;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--fs-lg);
+        z-index: 900;
     }
     /* #endregion slideshow */
-
-    .about-me-section{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        width: 55%;
-    }
-
-    .about-me-section h1{
-        font-size: var(--fs-xl);
-    }
-
-    .about-me-section p{
-        font-size: var(--fs-md);
-    }
-
-    .main-menu-selection{
-        display: flex;
-        width: 50%;
-        gap: 20px;
-    }
-    
-    .selection{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .selection h1{
-        font-size: var(--fs-xl);
-    }
-
-    .selection img{
-        width: 100%;
-        border-radius: 15px;
-    }
-
-    .selection a{
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .current-page button{
-        color: var(--accent-two);
-    }
 
     /* #region lighbox */
     .lightbox{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
         position: fixed;
         inset: 0;
@@ -450,32 +570,44 @@
         z-index: 1001;
         background:#000000;
     }
+
     .lightbox .slide{
-        height: 80%;
-        aspect-ratio: 16 / 9;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
+        height: 100%;
+        width: max-content;
     }
 
-    .lightbox .slide-content{
-        height: 100%;
-        width: 100%;
+    .lightbox .slide .slide-content{
+        width: auto;
+        min-width: 50vw;
         object-fit: contain;
+        height: 70%;
+    }
+
+    .lightbox .slide-image-caption{
+        width: auto;
+        height: 10%;
+    }
+
+    .lightbox .slide-image-caption p{
+        font-size: var(--fs-xxl);
     }
     
     .lightbox .slide-nav{
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgb(88, 88, 88);
-        color: white;
+        background: rgb(255, 255, 255, 0.75);
+        color: black;
         border: none;
         border-radius: 50%;
-        width: var(--fs-xxl);
-        height: var(--fs-xxl);
+        width: 3vw;
+        height: 3vw;
         cursor: pointer;
-        font-size: 18px;
+        font-size: var(--fs-lg);
     }
 
     .lightbox .slide-nav.prev{
@@ -486,44 +618,80 @@
         right: 10px;
     }
 
-    .toggle-slideshow-zoom{
+    .lightbox .toggle-slideshow-zoom{
         position: absolute;
         top: 0;
         right: 0;
         margin-top: 5px;
         margin-right: 5px;
-        background: rgb(88, 88, 88);
-        color: white;
+        background: rgb(255, 255, 255);
+        color: black;
         border: none;
         border-radius: 50%;
-        width: var(--fs-xxl);
-        height: var(--fs-xxl);
+        width: 3vw;
+        height: 3vw;
         cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: var(--fs-lg);
-        z-index: 1000;
+        z-index: 900;
     }
     
-    .lightbox .slide-image-caption{
-        display: block;
-        position: relative;
-        width: 100%;
-        bottom:0px;
-        left: 0px;
-        background-color: #222222e5;
-    }
-
     /* #endregion lighbox */
 
     /*Screens 1200px and down*/
     @media screen and (max-width: 1200px)
     {
-        :root{
-            --header-height: 56px;
+        .homepage-content-body{
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            padding: 2vh 5vw;
+            padding-bottom: calc(var(--header-height) + 2vh);
         }
+
+        /* #region about-me-section */
+        .about-me-section{
+            width: 100%;
+            height: auto;
+            border-right: none;
+            border-bottom: solid 2px;
+            gap: 1vh;
+            text-align: center;
+            padding: 0 2vw;
+            padding-bottom: 2vh;
+        }
+
+        .about-me-section h1{
+            font-size: var(--fs-xxl);
+        }
+
+        .about-me-section p{
+            font-size: var(--fs-md);
+        }
+        /* #endregion about-me-section */
+
+        /* #region Main Menu */
+        .main-menu{
+            width: 100%;
+            height: auto;
+        }
+        .main-menu-selection h1{
+            width: 100%;
+            font-size: var(--fs-xl);
+            text-align: center;
+        }
+
+        .main-menu-selection a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-menu-selection img{
+            width: 90%;
+        }
+        /* #endregion Main Menu */
         
+        /* #region Navbar */
         .footer-navbar{
             display: flex;
             position: fixed;
@@ -533,7 +701,6 @@
             height: var(--header-height);
             justify-content:space-between;
             background-color: var(--background-accent);
-            border-top: 1px solid #FFFFFF;
             z-index: 1000;
         }
 
@@ -550,14 +717,6 @@
             border-right: none;   
         }
 
-        .navbar-title-container h1{
-            font-size: var(--fs-lg);
-        }
-
-        .navbar-title-container h2{
-            font-size: var(--fs-md);
-        }
-
         .navbar-item:has(.dropdown-top-level) {
             width: 100%;
         }
@@ -565,18 +724,7 @@
         .navbar-item {
             width: 33%;
         }
-
-        .content-body{
-            width: 90%;
-        }
-
-        .about-me-section{
-            width: 100%;
-        }
-
-        .main-menu-selection{
-            width: 100%;
-        }
+        /* #endregion Navbar */
 
         .project-card-split-container{
             display: flex;
@@ -595,30 +743,121 @@
         .project-card-inner-content-visual iframe{
             border-radius: 0;
         }
-        .lightbox .slide{
-            width:90%;
-            height: auto;
-            aspect-ratio: 16/9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+        .slideshow .slide-nav{
+            top: 45%;
+            width: 7vw;
+            height: 7vw;
+            font-size: var(--fs-xl);
         }
+
+        .slideshow .toggle-slideshow-zoom
+        {
+            width: 7vw;
+            height: 7vw;
+            font-size: var(--fs-xl);
+        }
+
+        
+
+        .lightbox .slide-nav, 
         .lightbox .toggle-slideshow-zoom{
-            top: 10%;
+            width: 6vw;
+            height: 6vw;
+            font-size: var(--fs-xl); 
+        }
+
+        .lightbox .slide{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .lightbox .slide-image-caption p{
+            font-size: var(--fs-xl);
         }
     }
     
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {
+        
+        .homepage-content-body{
+            flex-direction: column-reverse;
+        }
+
+        .navbar-text-container h1 {
+            font-size: var(--fs-md);
+        }
+
+        .navbar-text-container h2 {
+            font-size: var(--fs-base);
+        }
+        
+        .navbar-item button,
+        .navbar-item .dropdown-top-level button{
+            font-size: var(--fs-base);
+        }
+        
+        /* #region about-me-section */
+        .about-me-section{
+            border: none;
+        }
+
+        .about-me-section h1{
+            font-size: var(--fs-xl);
+        }
 
         .about-me-section p{
             font-size: var(--fs-base);
         }
 
-        .about-me-section h1{
+        /* #endregion about-me-section */
+
+        .card-body-text p, .card-body-text a{
+            font-size: var(--fs-base);
+        }
+
+        .slideshow .slide-nav, .lightbox .slide-nav{
+            top: 45%;
+            width: 9vw;
+            height: 9vw;
             font-size: var(--fs-lg);
         }
-        .selection h1{
+
+        .slideshow .toggle-slideshow-zoom, 
+        .lightbox .toggle-slideshow-zoom
+        {
+            width: 9vw;
+            height: 9vw;
             font-size: var(--fs-lg);
+        }
+  
+        .main-menu{
+            padding-top: 0;
+            padding-bottom: 2vh;
+            border-bottom: solid 2px;
+        }
+        
+        .main-menu-selection h1{
+            font-size: var(--fs-lg);
+        }
+
+        .slide-image-caption p{
+            font-size: var(--fs-base);
+        }
+    }
+
+    @media only screen and (max-height: 800px) {
+        :root{
+            --header-height: 10vh;
+        }
+        .navbar-text-container h1 {
+            font-size: var(--fs-md);
+        }
+
+        .navbar-text-container h2 {
+            font-size: var(--fs-base);
         }
     }
