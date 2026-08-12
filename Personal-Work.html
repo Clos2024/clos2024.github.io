@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elder Scrolls Online Work Samples</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="header-navbar">
@@ -19,7 +21,7 @@
             </div>
         </div>
         <div class="navbar-buttons-container"> 
-            <div class="navbar-item ">
+            <div class="navbar-item">
                 <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Home</button>
             </div>
             <div class="navbar-item">
@@ -28,12 +30,13 @@
             <div class="navbar-item current-page">
                 <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal Projects</button>
             </div>
+
             <div class="navbar-item">
-                <div class ="dropdown-top-level">
-                    <button class="resume-button" id="resumeBtn">
+                <div class ="navbar-dropdown">
+                    <button class="resume-button" id="dropdownBtn">
                         <i class="fas fa-file-alt"></i> Resume
                     </button>
-                    <div class="resume-dropdown-menu" id="resumeDropdown">
+                    <div class="dropdown-menu" id="resumeDropdown">
                         <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
                             <i class="fas fa-download"></i> Download PDF
                         </a>
@@ -68,7 +71,9 @@
                             survive waves of Antagonist Bots to win it all.
                         </div>
                     </div>
-                    <div class="card-body-text"> <a href="https://store.steampowered.com/app/1945060/Run_N_Gun/"> Play Here </a> </div>
+                    <div class="card-body-source"> 
+                        <a href="https://store.steampowered.com/app/1945060/Run_N_Gun/"> Play Here </a> 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <video controls preload="auto">
@@ -98,7 +103,9 @@
                             rebuild your escape vessel.
                         </div>
                     </div>
-                    <div class="card-body-text"> <a href="https://devclos.itch.io/solitude"> Play Here </a> </div>                  
+                    <div class="card-body-source">
+                        <a href="https://devclos.itch.io/solitude"> Play Here </a> 
+                    </div>                
                 </div>
                 <div class="project-card-inner-content-visual">
                     <iframe
@@ -129,7 +136,9 @@
                             want your path to be.
                         </div>
                     </div>
-                    <div class="card-body-text"> <a href="https://devclos.itch.io/cave-of-math"> Play Here </a> </div>                
+                    <div class="card-body-source"> 
+                        <a href="https://devclos.itch.io/cave-of-math"> Play Here </a> 
+                    </div>                
                 </div>
                 <div class="project-card-inner-content-visual">
                     <iframe
@@ -160,7 +169,9 @@
                             your job and survive Black Friday.
                         </div>
                     </div>
-                    <div class="card-body-text"> <a href="https://devclos.itch.io/black-friday-blitz"> Play Here </a> </div>
+                    <div class="card-body-source">
+                        <a href="https://devclos.itch.io/black-friday-blitz"> Play Here </a> 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <iframe
@@ -191,7 +202,9 @@
                             Battle your friends to achieve the highest score on the leaderboard.
                         </div>
                     </div>
-                    <div class="card-body-text"> <a href="https://devclos.itch.io/swarm"> Play Here </a> </div>
+                    <div class="card-body-source"> 
+                        <a href="https://devclos.itch.io/swarm"> Play Here </a> 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <iframe

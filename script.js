@@ -1,5 +1,8 @@
 console.log('Script file is being loaded');
 
+const slideshowContainers = [];
+const dropdownContainers = [];
+
 class Slideshow {
     constructor(container) {
         this.container = container;
@@ -64,9 +67,66 @@ class Slideshow {
     }
 }
 
+class Dropdown {
+    constructor(container) {
+        this.container = container;
+        this.dropdownMenu = container.querySelector('.dropdown-menu');
+        this.dropdownItems = this.dropdownMenu.querySelectorAll('.dropdown-item');
+        this.active = false;
+
+        dropdownContainers.push(this);
+
+        container.querySelector('#dropdownBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.toggleDropdown();
+        });
+        
+    }
+
+    toggleDropdown() {
+        console.log('toggle dropdown');
+        this.active = !this.active;
+
+        dropdownContainers.forEach(dropdownInstance => {
+
+            if(dropdownInstance !== this) {
+                dropdownInstance.closeDropdown();
+            }
+        });
+
+        if(this.active) {
+            this.dropdownMenu.classList.add('active');
+            this.clickOutsideHandler = (e) => {
+                if(!e.target.closest('.dropdown-menu')) {
+                    this.toggleDropdown();
+                }
+            };
+            document.addEventListener('click', this.clickOutsideHandler);
+        }
+        else {
+            this.dropdownMenu.classList.remove('active');
+            document.removeEventListener('click', this.clickOutsideHandler);
+        }
+    }
+
+    closeDropdown() {
+        this.active = false;
+        this.dropdownMenu.classList.remove('active');
+        document.removeEventListener('click', this.clickOutsideHandler);
+    }
+}
+
+
+
 document.querySelectorAll('[data-slideshow]').forEach(container => {
     new Slideshow(container);
 });
+
+document.querySelectorAll(".navbar-dropdown").forEach(container => {
+    new Dropdown(container);
+});
+
 
 let pdfjsLib;
 
@@ -237,29 +297,29 @@ if (document.readyState === 'loading') {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const resumeBtn = document.getElementById('resumeBtn');
-    const resumeDropdown = document.getElementById('resumeDropdown');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const resumeBtn = document.getElementById('resumeBtn');
+//     const resumeDropdown = document.getElementById('resumeDropdown');
 
-    resumeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        resumeDropdown.classList.toggle('active');
-        console.log('Classes after toggle:', resumeDropdown.className);
-    });
+//     resumeBtn.addEventListener('click', function(e) {
+//         e.preventDefault();
+//         e.stopPropagation();
+//         resumeDropdown.classList.toggle('active');
+//         console.log('Classes after toggle:', resumeDropdown.className);
+//     });
 
-    const dropdownItems = resumeDropdown.querySelectorAll('.dropdown-item');
+//     const dropdownItems = resumeDropdown.querySelectorAll('.dropdown-item');
     
-    dropdownItems.forEach(item => {
-        item.addEventListener('click', function () {
-            console.log('Dropdown item clicked');
-            resumeDropdown.classList.remove('active');
-        })
-    });
-    document.addEventListener('click', function(e) {
-        if(!e.target.closest('.resume-dropdown')) {
-            resumeDropdown.classList.remove('active');
-        }
-    });
-});
+//     dropdownItems.forEach(item => {
+//         item.addEventListener('click', function () {
+//             console.log('Dropdown item clicked');
+//             resumeDropdown.classList.remove('active');
+//         })
+//     });
+//     document.addEventListener('click', function(e) {
+//         if(!e.target.closest('.resume-dropdown')) {
+//             resumeDropdown.classList.remove('active');
+//         }
+//     });
+// });
 

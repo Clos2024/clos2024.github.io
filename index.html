@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="header-navbar">
@@ -28,12 +30,13 @@
             <div class="navbar-item">
                 <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal Projects</button>
             </div>
+
             <div class="navbar-item">
-                <div class ="dropdown-top-level">
-                    <button class="resume-button" id="resumeBtn">
+                <div class ="navbar-dropdown">
+                    <button class="resume-button" id="dropdownBtn">
                         <i class="fas fa-file-alt"></i> Resume
                     </button>
-                    <div class="resume-dropdown-menu" id="resumeDropdown">
+                    <div class="dropdown-menu" id="resumeDropdown">
                         <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
                             <i class="fas fa-download"></i> Download PDF
                         </a>
@@ -48,17 +51,13 @@
     <div class="homepage-content-body">
             <div class="about-me-section">
                 <h1>About Me</h1>
-                <p>Gaming is how I've made lifelong friends, expressed my creativity, challenged my mind, 
-                and found a passion for technology. With each project I strive to provide all those wonders 
-                for today's players by adhering to my core design pillars: respect the player's time, autonomy 
-                in play, and intuitive and evolving gameplay.</p>
-                <p>I've formed these pillars from my experiences designing and programming games in various genres 
-                — ranging from tabletop card games to MMORPGs — as well as from insightful discussions and collaborations 
-                with peers across multiple disciplines. This breadth of experience has given me both a player's empathy 
-                and a developer's practical mindset.</p>  
-                <p>I would welcome the opportunity to bring my design philosophy and collaborative spirit to your team. 
-                Please feel free to review my portfolio and reach out — I'd love to discuss how I can contribute to your 
-                next project.</p>
+                <p>I bring 4+ years of professional experience as a game designer, alongside years of personal projects 
+                    as a self-taught programmer, building everything from small prototypes to full game systems. Gaming 
+                    has given me lifelong friendships, creative fulfillment, and a lasting curiosity for technology—and 
+                    with every project, I aim to give players that same sense of fun, connection, and growth.</p>
+                <p>My years of experience playing and making games shaped my core design pillars: Respect the Player's
+                     Time, Learn by Doing, and Simple Inputs: Complex Outputs. I’ve refined these through my work across 
+                     genres and through insightful conversations with peers across disciplines industry-wide.</p>  
             </div>
             <div class="main-menu">
                 <div class="main-menu-selection">

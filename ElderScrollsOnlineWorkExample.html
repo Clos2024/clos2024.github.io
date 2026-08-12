@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elder Scrolls Online Work Samples</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <script type="module" src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="header-navbar">
@@ -20,21 +21,22 @@
             </div>
         </div>
         <div class="navbar-buttons-container"> 
-            <div class="navbar-item">
+            <div class="navbar-item ">
                 <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Home</button>
             </div>
             <div class="navbar-item current-page">
                 <button onclick="window.location.href='Professional-Work.html'"><i class="fas fa-briefcase"></i> Professional Work</button>
             </div>
             <div class="navbar-item">
-                <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal Projects</button>
+                <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-Gamepad"></i> Personal Projects</button>
             </div>
+
             <div class="navbar-item">
-                <div class ="dropdown-top-level">
-                    <button class="resume-button" id="resumeBtn">
+                <div class ="navbar-dropdown">
+                    <button class="resume-button" id="dropdownBtn">
                         <i class="fas fa-file-alt"></i> Resume
                     </button>
-                    <div class="resume-dropdown-menu" id="resumeDropdown">
+                    <div class="dropdown-menu" id="resumeDropdown">
                         <a href="Media/Carlos%20Ruiz_Resume2026_BetterFormat.pdf" download class="dropdown-item">
                             <i class="fas fa-download"></i> Download PDF
                         </a>
@@ -59,10 +61,18 @@
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
                     <div class="card-body-text">
-                        Returning to Tamriel after a long absence? The Hero's Return system provides a reintroduction to ESO's core gameplay mechanics and features. This curated experience begins with a short unique quest and provides useful catch-up rewards throughout the experience, so be sure to take part when you log back in!
+
+                        Problem: Players returning to the game after a long absence were often confused and overwhelmed by the amount of content and systems in the game. 
+                        They often felt lost and unsure of what to do, leading to frustration and negative retention.
                     </div>
                     <div class="card-body-text">
-                        <p> Source: <a href="https://www.elderscrollsonline.com/en-us/guides/herosreturn"> https://www.elderscrollsonline.com/en-us/guides/herosreturn </a> </p>
+                        Solution: Designed and developed an updated tutorial and challenge campaign system tailored to returning players, with the goal of 
+                        reducing friction through catch-up rewards, facilitating discovery of core gameplay loops and content, and clarifying the 
+                        affordances of key game systems, features, and items. The system was built around a "learn by doing" philosophy, prioritizing 
+                        hands-on engagement over passive instruction.
+                    </div>
+                    <div class="card-body-source">
+                        <a href="https://www.elderscrollsonline.com/en-us/guides/herosreturn"> www.elderscrollsonline.com/en-us/guides/herosreturn </a>
                     </div>
                 </div>
                 <div class="project-card-inner-content-visual">
@@ -97,7 +107,7 @@
                         </div>
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -109,10 +119,18 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> New and early-game players can expect extra support on their first steps into Tamriel with the Path to Adventure Golden Pursuit. Similar to the Hero’s Return campaign, the Path to Adventure uses the Golden Pursuits framework to offer optional guidance and structure when getting started in ESO. 
-                        As you get your new character going, you’ll be introduced to the basics of common ESO activities and mechanics and granted rewards to help you on your way. You’ll also learn about everything from Mundus Stones to crafting, get a chance to explore delves and dungeons, and receive consumables, basic gear, and other helpful goods. </div>
                     <div class="card-body-text">
-                        <p>Source: <a href="https://www.elderscrollsonline.com/en-us/news/post/69857"> https://www.elderscrollsonline.com/en-us/news/post/69857 </a> </p>
+                        Problem: New and early-game players often struggle to find their footing in ESO, overwhelmed by the sheer volume of content accumulated over the years. 
+                        This can lead to analysis paralysis, frustration, and ultimately, negative impacts on player retention.
+                    </div>
+                    <div class="card-body-text">
+                        Solution: Similar to Hero's Return, we designed and developed a new player onboarding experience that provides a clear "golden path" for players to follow 
+                        from level 1 through 20. By completing these campaigns, players receive progress checkpoints, a defined sense of direction, and meaningful rewards that set 
+                        them up for long-term success, all while learning gameplay loops that cater to a range of playstyles, from combat to exploration. The system was built 
+                        around a "learn by doing" philosophy, prioritizing hands-on engagement over passive instruction.
+                    </div>
+                    <div class="card-body-source">
+                        <a href="https://www.elderscrollsonline.com/en-us/news/post/69857"> www.elderscrollsonline.com/en-us/news/post/69857 </a>
                     </div>
                 </div>
                 
@@ -136,7 +154,7 @@
                         </div>
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -152,7 +170,14 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Water-lovers rejoice! This pocket realm features picturesque waterfalls, lively fountains, and magical pools under colorful skies. Whether you walk on water or swim while you creatively furnish this space is up to you. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Water-lovers rejoice! This pocket realm features picturesque waterfalls, lively fountains, and magical pools under colorful skies. 
+                        Whether you walk on water or swim while you creatively furnish this space is up to you.
+                    </div>
+
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -176,7 +201,7 @@
                         </div>
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -188,7 +213,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> This Star-Gazer observatory majestically dominates its cliffside Reach location, where its domed main building provides a clear view of the sky. The addition of other eye-catching features delight those who study celestial topics. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: This Star-Gazer observatory majestically dominates its cliffside Reach location, where its domed main building provides a clear view of the sky. 
+                        The addition of other eye-catching features delight those who study celestial topics. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -212,7 +243,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -224,7 +255,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Need a friendly port in a hurry? Escape to Buccaneer Bay! Forget your woes (or let your woes forget you) in a sunny seaside setting. And don't worry about raiders. Stories of ghost pirates lurking in the depths keep them away. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game description: Need a friendly port in a hurry? Escape to Buccaneer Bay! Forget your woes (or let your woes forget you) in a sunny seaside setting. 
+                        And don't worry about raiders. Stories of ghost pirates lurking in the depths keep them away. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -248,7 +285,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -260,7 +297,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Experience all of Y'ffre's seasons in a single day! This estate blends a Druid-crafted four-season garden and the beauty of a Breton's noble villa. Grab a trowel and start making this garden getaway your own! </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game description: Experience all of Y'ffre's seasons in a single day! This estate blends a Druid-crafted four-season garden and the beauty of a Breton's noble villa. 
+                        Grab a trowel and start making this garden getaway your own! 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -284,7 +327,7 @@
                         </div>                             
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -296,7 +339,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> The Night Market provides vast opportunities, including a former bank vault in need of a new owner. Hoard your wealth—and your faction's secrets—inside. Plus decorate your den with faction furnishings as you gain favor with your chosen group! </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: In-Game reward</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game description: The Night Market provides vast opportunities, including a former bank vault in need of a new owner. Hoard your wealth—and your faction's secrets—inside. 
+                        Plus decorate your den with faction furnishings as you gain favor with your chosen group! 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -320,7 +369,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -332,7 +381,16 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Once a relaxing getaway for Corelanyan nobles, this elegant retreat features an outdoor pool along the shore, indoor steam baths, and spacious facilities that allow even the most battle-worn adventurer to treat themselves. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Once a relaxing getaway for Corelanyan nobles, this elegant retreat features an outdoor pool along the shore, 
+                        indoor steam baths, and spacious facilities that allow even the most battle-worn adventurer to treat themselves. 
+                    </div>
+                    <div class="card-body-text"> 
+                        
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -356,7 +414,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -368,7 +426,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Count Calantius cordially invites a caretaker to maintain and decorate Castle Skingrad as he rides out to support his loyal citizens. This majestic castle stands just outside Skingrad, granting easy access to the city's amenities and nearby vineyards. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Count Calantius cordially invites a caretaker to maintain and decorate Castle Skingrad as he rides out to support
+                        his loyal citizens. This majestic castle stands just outside Skingrad, granting easy access to the city's amenities and nearby vineyards. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -392,7 +456,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -404,7 +468,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Discovered by guild mages in the aftermath of the Writhing Wall campaign, this dread realm hosts a bone colossus personally crafted by Wormblood. Wrest this stronghold from the worms and use the colossus to practice your best combat moves! </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Discovered by guild mages in the aftermath of the Writhing Wall campaign, this dread realm hosts a bone colossus 
+                        personally crafted by Wormblood. Wrest this stronghold from the worms and use the colossus to practice your best combat moves! 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -428,7 +498,7 @@
                         </div>                    
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -440,7 +510,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Only Hermaeus Mora knows why the previous curator fled this towering edifice filled with proscribed enigmata. Now the One Who Knows seeks a new cataloger who enjoys the panoptic views of Apocrypha and never, ever opens the books secured within. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Only Hermaeus Mora knows why the previous curator fled this towering edifice filled with proscribed enigmata. 
+                        Now the One Who Knows seeks a new cataloger who enjoys the panoptic views of Apocrypha and never, ever opens the books secured within. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -464,7 +540,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -476,7 +552,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Once the primary museum for collections curated by the University of Gwylim, this stately structure and its grounds provide a perfect setting for the display of art, curios, statuary, and more. Show off favored possessions in a refined locale! </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: 10th anniversary In-Game reward</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Once the primary museum for collections curated by the University of Gwylim, this stately structure and its grounds 
+                        provide a perfect setting for the display of art, curios, statuary, and more. Show off favored possessions in a refined locale! 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -500,7 +582,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -512,7 +594,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Originally the sanctuary for the Five Companions, this stately structure features five rooms—one for each of the original Companions—plus a central meeting space. Gorgeous views of West Weald and Cyrodiil complement the majestic serenity of this area. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: 10th anniversary In-Game reward</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Originally the sanctuary for the Five Companions, this stately structure features five rooms—one for each of the original 
+                        Companions—plus a central meeting space. Gorgeous views of West Weald and Cyrodiil complement the majestic serenity of this area. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -536,7 +624,7 @@
                         </div>
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -548,7 +636,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Glowing crystals dot the walls of this abandoned Dwarven processing facility perched over fathomless mines in Blackreach. Smiths and others who require steady heat for forging materials can use the active furnace to craft wondrous creations. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Glowing crystals dot the walls of this abandoned Dwarven processing facility perched over fathomless mines in Blackreach. 
+                        Smiths and others who require steady heat for forging materials can use the active furnace to craft wondrous creations. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -572,7 +666,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -584,7 +678,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Merryvine's wines once rivaled those of the nearby Valente Vineyard, but misfortune sent its former owner fleeing. This sun-kissed estate features fertile grapevines, a house suitable for entertaining, and facilities that would please any vintner. </div>
+                <div class="card-body-text">
+                    <p>Sourcing: In-Game Reward</p>
+                </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Merryvine's wines once rivaled those of the nearby Valente Vineyard, but misfortune sent its former owner fleeing. This sun-kissed 
+                        estate features fertile grapevines, a house suitable for entertaining, and facilities that would please any vintner. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -608,7 +708,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -620,7 +720,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Those who slip through society to steal wealth and information know the value of a quiet hideaway. This mausoleum provides silence and a hidden space in which to lie low until the next heist. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: In-Game Reward</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Those who slip through society to steal wealth and information know the value of a quiet hideaway. This mausoleum provides silence 
+                        and a hidden space in which to lie low until the next heist. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -644,7 +750,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -656,7 +762,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Blossom lovers will delight in this picturesque villa perched on the western coastline of Auridon! With its elegant design, this cozy home awaits any who seek to nurture its blooms to life while enjoying how the light dances on the nearby rippling waters. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Blossom lovers will delight in this picturesque villa perched on the western coastline of Auridon! With its elegant design, this 
+                        cozy home awaits any who seek to nurture its blooms to life while enjoying how the light dances on the nearby rippling waters. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -680,7 +792,7 @@
                         </div>                    
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -692,7 +804,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Scintillating islands and skeletons of long-forgotten beasts float amid Mirrormoor's luminous skies. Enterprising architects, step through a shattered mirror portal in Fargrave and finesse this osseous mass into a dazzling dimensional home. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Scintillating islands and skeletons of long-forgotten beasts float amid Mirrormoor's luminous skies. Enterprising architects, 
+                        step through a shattered mirror portal in Fargrave and finesse this osseous mass into a dazzling dimensional home. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -716,7 +834,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -728,7 +846,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Some claim the truest treasure in this former Sword-Singer stronghold glitters below ground in the form of cool, clear water. After the retreat of the Sword-Singers, enterprising merchants set up markets here for wealthy clients. Perhaps you will too? </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Some claim the truest treasure in this former Sword-Singer stronghold glitters below ground in the form of cool, clear water. 
+                        After the retreat of the Sword-Singers, enterprising merchants set up markets here for wealthy clients. Perhaps you will too? 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -752,7 +876,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -764,7 +888,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> An entertainer's delight! Plays, recitals, and more once filled the stage in this Ayleid theater—all dedicated to Merid-Nunda, the Bright One. Tucked away in the Colored Rooms, this opulent venue awaits its next riveting performance and adoring patrons. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: An entertainer's delight! Plays, recitals, and more once filled the stage in this Ayleid theater—all dedicated to Merid-Nunda, the Bright One. 
+                        Tucked away in the Colored Rooms, this opulent venue awaits its next riveting performance and adoring patrons. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -788,7 +918,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -800,7 +930,13 @@
             </div>
             <div class="project-card-split-container">
                 <div class="project-card-inner-content-text">
-                    <div class="card-body-text"> Breezes carry verdant scents from the nearby jungle to caress the sand gardens in this former Desert Wind adeptorium. Though no longer a site of Khajiit practicing a dual-sword technique, this riverside location serves well as a meditative getaway. </div>
+                    <div class="card-body-text">
+                        <p>Sourcing: Crown Store Product</p>
+                    </div>
+                    <div class="card-body-text"> 
+                        In-Game Description: Breezes carry verdant scents from the nearby jungle to caress the sand gardens in this former Desert Wind adeptorium. Though no longer a site of 
+                        Khajiit practicing a dual-sword technique, this riverside location serves well as a meditative getaway. 
+                    </div>
                 </div>
                 <div class="project-card-inner-content-visual">
                     <div class="slideshow" data-slideshow>
@@ -824,7 +960,7 @@
                         </div>                        
                         <button class="slide-nav prev" id="prev" aria-label="Previous image">&#10094;</button>
                         <button class="slide-nav next" id="next" aria-label="Next image">&#10095;</button>
-                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fas fa-search-plus"></i></button>
+                        <button class="toggle-slideshow-zoom" id="toggle-slideshow-zoom"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
             </div>
@@ -839,7 +975,7 @@
                 <button onclick="window.location.href='Professional-Work.html'"><i class="fas fa-briefcase"></i> Professional</button>
             </div>
             <div class="navbar-item">
-                <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-gamepad"></i> Personal</button>
+                <button onclick="window.location.href='Personal-Work.html'"><i class="fas fa-Gamepad"></i> Personal</button>
             </div>
     </div>
 </body>
